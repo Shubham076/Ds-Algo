@@ -4,6 +4,7 @@ class LPS {
     String rev;
     int[][] L;
 
+// the solution of reversing a string and finding longest palindromic substrind does not always works... 
     public LPS(String str) {
 
         this.str = str;
@@ -93,6 +94,7 @@ class LPS {
     }
 
     // using recursion
+
     public int lps(int i, int j) {
 
         char[] x = this.str.toCharArray();

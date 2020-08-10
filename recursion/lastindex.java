@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class lastindex {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		Scanner scn=new Scanner(System.in);
 		 int[] arr= {1,2,4,5,9,8,3,8};
 		 System.out.println(lastindex(arr,0,8));
