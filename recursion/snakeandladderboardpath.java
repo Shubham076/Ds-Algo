@@ -1,20 +1,17 @@
-package recursion;
-
 import java.util.ArrayList;
 
 public class snakeandladderboardpath {
 //calculate all the possiblw ways to get number 10 by throwing dice;
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		System.out.print(getpath(0, 6));
 		
-		System.out.println();
-		System.out.println();
+
 		
-		printpath(0,3,"");
-		System.out.println();
+		// printpath(0,3,"");
+		// System.out.println();
 		
-		System.out.println(printpath(0,10));
+		// System.out.println(printpath(0,10));
 		
 
 	}
@@ -38,9 +35,12 @@ public class snakeandladderboardpath {
 
 		for (int dice = 1; dice <= 6; dice++) {
 			rr = getpath(cur + dice, end);
+			// all the path from 1 to n;
 
 			for (int i = 0; i < rr.size(); i++) {
+
 				myresult.add(dice + rr.get(i));
+				// add i to make all the path from 0 to n;
 
 			}
 
@@ -60,7 +60,7 @@ public class snakeandladderboardpath {
 			return;
 		
 		
-		for(int dice=1;dice<=6;dice++)
+		for(int dice = 1; dice <= 6; dice++)
 		{
 			printpath(cur+dice,end,ans+dice);
 		}

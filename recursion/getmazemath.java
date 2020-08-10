@@ -56,6 +56,7 @@ public class getmazemath {
 			System.out.println(ans);
 			return;
 		}
+		
 		if(sr>er||sc>ec)
 			return;
 		
@@ -71,6 +72,8 @@ public class getmazemath {
 
 			return 1;
 		}
+
+
 		if (sr > er || sc > ec)
 			return 0;
 		int ch = 0, cv = 0;
