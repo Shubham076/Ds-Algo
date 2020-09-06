@@ -21,7 +21,7 @@ public class insertionsort {
 	}
 	public static void insertionsort(int[] arr)
 	{
-		for(int i=0;i<arr.length-1;i++)
+		for(int i=1;i<arr.length-1;i++)
 		{ int value=arr[i];
 		int j=i-1;
 		while(j>=0&&arr[j]>value)

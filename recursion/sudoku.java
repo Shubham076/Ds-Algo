@@ -3,20 +3,16 @@ package recursion;
 public class sudoku {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		int[][] board = { { 7, 8, 0, 4, 0, 0, 1, 2, 0 }, { 6, 0, 0, 0, 7, 5, 0, 0, 9 }, { 0, 0, 0, 6, 0, 1, 0, 7, 8 },
 				{ 0, 0, 7, 0, 4, 0, 2, 6, 0 }, { 0, 0, 1, 0, 5, 0, 9, 3, 0 }, { 9, 0, 4, 0, 6, 0, 0, 0, 5 },
 				{ 0, 7, 0, 3, 0, 0, 0, 1, 2 }, { 1, 2, 0, 0, 0, 7, 4, 0, 0 }, { 0, 4, 9, 2, 0, 6, 0, 0, 7 } };
 
-		print_board(board);
-		solve(board);
-		System.out.println("============Solution==============");
-		print_board(board);
+		solve(board ,0 ,0);
 
 	}
 
-	public static void print_board(int[][] board) {
+	public static void display(int[][] board) {
 
 		for (int i = 0; i < board.length; i++) {
 
@@ -40,34 +36,14 @@ public class sudoku {
 		}
 	}
 
-	public static int[] pos(int[][] board) {
+	public static boolean is_valid(int[][] board , int row , int col , int value) {
 
-		int[] res = new int[2];
-
-		for (int i = 0; i < board.length; i++) {
-
-			for (int j = 0; j < board[0].length; j++) {
-
-				if (board[i][j] == 0) {
-					res[0] = i;
-					res[1] = j;
-					return res;
-				}
-
-			}
-
-		}
-		return res;
-
-	}
-
-	public static boolean is_valid(int num, int[] pos, int[][] board) {
-
+	
 		// checkng the rows
 
-		for (int i = 0; i < board[0].length; i++) {
+		for (int j = 0; j < board[0].length; j++) {
 
-			if (board[pos[0]][i] == num && pos[1] != i) {
+			if (board[row][j] == value) {
 				return false;
 			}
 
@@ -77,22 +53,22 @@ public class sudoku {
 
 		for (int i = 0; i < board.length; i++) {
 
-			if (board[i][pos[1]] == num && pos[0] != i) {
+			if (board[i][col] == value) {
 				return false;
 			}
 
 		}
 
-		int box_x = pos[0] / 3;
-		int box_y = pos[1] / 3;
+		int box_x = row / 3 *3;
+		int box_y = col / 3 *3;
 
 		// checking the boxes
 
-		for (int i = box_x *3; i < ((box_x * 3) + 3); i++) {
+		for (int i = 0 ; i <  3; i++) {
 
-			for (int j = box_y*3; j < ((box_y * 3) + 3); j++) {
+			for (int j = 0; j <  3; j++) {
 
-				if (board[i][j] == num && i != pos[0] && j != pos[1]) {
+				if (board[box_x + i][box_y + j] == value) {
 					return false;
 				}
 
@@ -103,39 +79,43 @@ public class sudoku {
 
 	}
 
-	public static boolean solve(int[][] board) {
+	// ni = next i nj = next j
+	public static void solve(int[][] board , int i , int j) {
 
-		int[] pos = new int[2];
-
-		int[] res = pos(board);
-
-		pos[0] = res[0];
-		pos[1] = res[1];
-
-		if (pos[0] == 0 && pos[1] == 0) {
-
-			return true;
-
+		if(i == board.length){
+			display(board);
+			return;
 		}
 
-		for (int i = 1; i <= 9; i++) {
-			if (is_valid(i, pos, board)) {
+		int ni = 0;
+		int nj = 0;
 
-				board[pos[0]][pos[1]] = i;
+		if(j == board[0].length-1){
 
-				boolean sol = solve(board);
+			ni = i + 1;
+			nj = 0;
 
-				if (sol) {
+		} else{
+			ni = i;
+			nj = j+1;
+		}
 
-					return true;
+		if(board[i][j] != 0){
+			 solve(board, ni, nj);
+		}
+
+		else{
+			for(int num = 1; num <= 9; num++){
+
+				if(is_valid(board, i, j, num)){
+					board[i][j] = num;
+					solve(board, ni, nj);
+					board[i][j] = 0;
+
 				}
-
-				board[pos[0]][pos[1]] = 0;
-
 			}
 		}
 
-		return false;
 
 	}
 
