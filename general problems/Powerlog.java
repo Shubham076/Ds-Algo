@@ -1,5 +1,3 @@
-
-
 class powerlog {
     public static void main(String[] args) {
 

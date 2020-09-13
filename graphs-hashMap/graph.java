@@ -133,7 +133,7 @@ public class graph {
 
 		// add new pair in the queue
 		queue.addLast(p);
-
+	
 		while (!queue.isEmpty()) {
 
 //			remove a pair from the queue
