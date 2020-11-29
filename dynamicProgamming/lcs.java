@@ -1,8 +1,8 @@
 class longetscommonSubsequence {
     public static void main(String[] args) {
 
-        String s1 = "aggtab";
-        String s2 = "gxtxayb";
+        String s1 = "PQRSTPQRSPQ";
+        String s2 = "PRATPBRQRPSQ";
 
         char[] x = s1.toCharArray();
         char[] y = s2.toCharArray();
@@ -57,6 +57,17 @@ class longetscommonSubsequence {
             }
 
         }
+
+        System.out.println("-------------------------");
+
+        for(int i = 0; i < L.length ; i++){
+            for(int j = 0; j < L[0].length; j++){
+                System.out.print(L[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("-----------------------");
         return L[m][n];
     }
 }

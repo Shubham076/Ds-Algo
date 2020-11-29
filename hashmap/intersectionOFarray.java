@@ -1,5 +1,3 @@
-package hashmap;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -8,7 +6,6 @@ import java.util.Set;
 public class intersectionOFarray {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 			int[] arr= {5,2,3,4,7};
 			int[] arr1= {2,4,3,5,7,10,15};

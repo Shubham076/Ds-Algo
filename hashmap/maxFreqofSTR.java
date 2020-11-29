@@ -1,5 +1,3 @@
-package hashmap;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -7,7 +5,7 @@ import java.util.Set;
 public class maxFreqofSTR {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
 		String str="aabaaacdda";
 		System.out.println(maxFreq(str));
 	}
