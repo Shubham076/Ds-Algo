@@ -1,22 +1,28 @@
-package Lecture1;
-
-import java.util.Scanner;
-
-public class GCD {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int GCD=1,i=1;
-		Scanner s=new Scanner(System.in);
-		int num1=s.nextInt();
-		Scanner p=new Scanner(System.in);
-		int num2=s.nextInt();
-		while(i<=num1&&i<=num2) {
-			if(num1%i==0&&num2%i==0)
-				GCD=i;
-			i++;
-		}System.out.println(GCD);
-
-	}
-
-}
+import java.util.*;
+    
+    public class Main{
+    
+    public static void main(String[] args) {
+      // write your code here  
+      
+      Scanner scn = new Scanner(System.in);
+      int a = scn.nextInt();
+      int b = scn.nextInt();
+      
+      int divisor = a;
+      int dividend = b;
+      
+      while(dividend % divisor != 0){
+          
+          int r = dividend % divisor;
+          dividend = divisor;
+          divisor = r;
+      }
+      
+      int gcd  =  divisor;
+      int lcm = (a * b) / gcd;
+      
+      System.out.println(gcd);
+      System.out.println(lcm);
+     }
+    }

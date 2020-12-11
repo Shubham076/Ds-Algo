@@ -1,23 +1,25 @@
-package Lecture1;
-
-import java.util.Scanner;
-
-public class FindPrime {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int i=2;
-		Scanner s=new Scanner(System.in);
-		int N=s.nextInt();
-		while(i<N) {
-			if(N%i==0) {
-				System.out.println("not prime");
-				return;}
-			i++;
-		}if(N==i)
-			System.out.println("prime");
-		
-
-	}
-
-}
+import java.util.*;
+  
+  public class Main{
+  
+  public static void main(String[] args) {
+      Scanner scn = new Scanner(System.in);
+      int t = scn.nextInt();
+      
+      while(t > 0){
+      int n = scn.nextInt();
+      int count = 0;
+       // write ur code here
+       for(int i = 2 ; i * i <= n; i++){
+            if(n % i == 0){
+                count++;
+            }     
+       }
+       
+       if(count > 0) System.out.println("not prime");
+       else System.out.println("prime");
+  
+   t--;
+   }
+  }
+  }
