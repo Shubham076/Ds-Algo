@@ -6,7 +6,7 @@ public class radixSort {
         }
     }
     public static void main(String[] args){
-        int[] arr = {241,123,486,688,914,526,201,440,666,101};
+        int[] arr = {24,123,486,688,914,526,201,440,666,101};
         radix_Sort(arr);
     }
 

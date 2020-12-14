@@ -1,7 +1,7 @@
 
 class saddlePoint {
 
-    // saddle point is the point which i sminimum in a row and max in column
+    // saddle point is the point which is minimum in a row and max in column
     public static void main(String[] args) {
 
         int[][] arr = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };

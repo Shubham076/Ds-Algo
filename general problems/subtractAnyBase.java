@@ -28,6 +28,7 @@ public class subtractAnyBase {
 
             if(d2 >= d1){
                 diff = d2 - d1;
+                carry = 0;
             } else {
                 // here we have taken an borrow for the next itertion we have added a carry of  -1
                 carry = -1;
