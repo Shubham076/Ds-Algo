@@ -1,8 +1,8 @@
 class longetscommonSubsequence {
     public static void main(String[] args) {
 
-        String s1 = "PQRSTPQRSPQ";
-        String s2 = "PRATPBRQRPSQ";
+        String s1 = "ababab";
+        String s2 = "baabaa";
 
         char[] x = s1.toCharArray();
         char[] y = s2.toCharArray();

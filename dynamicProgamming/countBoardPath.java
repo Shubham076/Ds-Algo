@@ -1,4 +1,4 @@
-package dynamicProgamming;
+
 
 import java.util.Scanner;
 
