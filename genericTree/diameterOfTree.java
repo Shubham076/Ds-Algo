@@ -26,7 +26,7 @@ public class diameterOfTree {
 
     public static int DiameterOfTree(Node root){
         int dh = -1;  // deepest child height 
-        int sdh = - 1; // second deepext child height
+        int sdh = - 1; // second deepest child height
 
         for(Node child : root.children){
             int h = DiameterOfTree(child);

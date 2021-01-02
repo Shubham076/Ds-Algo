@@ -24,6 +24,15 @@ class Main{
         }
     }
 
+
+    // algo for constructing generic tree
+    // create a stack
+    // if arr[i] = -1 means it has no children pop out of the stack
+    // if arr[i] != -1 ans stack is not empty
+    //  then add this node as a child to top node of the stack and also push this node to the stack;
+    // if arr[i] != -1 and stack is empty make this node as root node and push it to the stack.
+
+
     public static void main(String[] args) {
 
         int[] arr = {10, 20, -1, 30, 50, -1, 60, -1, -1, 40, -1, -1};

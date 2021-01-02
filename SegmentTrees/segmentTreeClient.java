@@ -1,5 +1,3 @@
-package SegmentTrees;
-
 public class segmentTreeClient {
 
 	public static void main(String[] args) {

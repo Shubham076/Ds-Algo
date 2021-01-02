@@ -1,4 +1,4 @@
-class longetscommonSubsequence {
+class lcs{
     public static void main(String[] args) {
 
         String s1 = "ababab";
@@ -14,7 +14,7 @@ class longetscommonSubsequence {
     }
 
     // recursive solution time complexity of o(2^n)
-    public static int lcs(char[] x, char[] y, int m, int n) {
+    public static int Lcs(char[] x, char[] y, int m, int n) {
 
         if (m == 0 || n == 0) {
             return 0;
@@ -22,12 +22,12 @@ class longetscommonSubsequence {
 
         else if (x[m - 1] == y[n - 1]) {
 
-            return 1 + lcs(x, y, m - 1, n - 1);
+            return 1 + Lcs(x, y, m - 1, n - 1);
 
         }
 
         else {
-            return (int) Math.max(lcs(x, y, m - 1, n), lcs(x, y, m, n - 1));
+            return (int) Math.max(Lcs(x, y, m - 1, n), Lcs(x, y, m, n - 1));
         }
 
     }

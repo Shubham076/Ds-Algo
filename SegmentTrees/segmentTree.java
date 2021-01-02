@@ -1,4 +1,3 @@
-package SegmentTrees;
 
 public class segmentTree {
 
