@@ -1,9 +1,5 @@
 import java.util.*;
-
-public class displayBinaryTree {
-    // state ==  1 (next element is left) , push it to the stack ,increase state
-    // state == 2 (next element is right) ,push it to the stack , increase state
-    // state == 3 pop out of the stack 
+public class isTreeBalanced {
     static class Node{
         int data;
          Node left = null;
@@ -77,9 +73,31 @@ public class displayBinaryTree {
         display(root.right);
 
     }
+
+    static boolean isBal = true;
+
+    public static int isTreeBal(Node root){
+        if(root == null){
+            return -1;
+        }
+        int lh = isTreeBal(root.left);
+        int rh = isTreeBal(root.right);
+
+        int v = Math.abs(lh - rh);
+        if(v > 1){
+            isBal = false;
+        }
+
+        return Math.max(lh , rh) + 1;
+
+
+
+    }
     public static void main(String[] args){
-        Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
+        Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, 51, null, null, 75, 62, 60, null, null, 70, null, null, null};
         Node root = constructBinaryTree(arr);
-        display(root);
+        // display(root);
+        isTreeBal(root);
+        System.out.println(isBal);
     }
 }

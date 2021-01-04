@@ -25,7 +25,7 @@ public class overloadingdemo {
 	}
 	
 	///no function contain more than 2 variable arguments
-	// in case of mote than 2 arguments variable one is declared at last;
+	// in case of more than 2 arguments variable one is declared at last;
 	//a variable arguments is nothing but a array
 	public static int sum(int...args)
 	{   int sum=0;

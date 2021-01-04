@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class mergeKSortedList {
 
     static class Pair implements Comparable<Pair> {
-        int li;
-        int di;
+        int li;     // list index
+        int di;     // data index
         int v;
 
         public Pair(int li, int di , int v){

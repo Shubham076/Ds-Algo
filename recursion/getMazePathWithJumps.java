@@ -24,7 +24,7 @@ public class getMazePathWithJumps {
 
         }
 
-// vertical movemnent
+        // vertical movemnent
         for(int i = 1 ; i <= er - sr ; i++ ){
             getPath(sr + i, sc, er, ec, ans+ "V" + i+" " );
         }

@@ -1,5 +1,3 @@
-package recursion;
-
 public class sudoku {
 
 	public static void main(String[] args) {
@@ -59,8 +57,8 @@ public class sudoku {
 
 		}
 
-		int box_x = row / 3 *3;
-		int box_y = col / 3 *3;
+		int box_x = row / 3 * 3;
+		int box_y = col / 3 * 3;
 
 		// checking the boxes
 
@@ -90,7 +88,7 @@ public class sudoku {
 		int ni = 0;
 		int nj = 0;
 
-		if(j == board[0].length-1){
+		if(j == board[0].length - 1){
 
 			ni = i + 1;
 			nj = 0;

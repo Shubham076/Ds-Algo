@@ -1,8 +1,8 @@
 import java.util.*;
 public class maximumsumSubtree {
 
-    static Node mn;
-    static int ms;
+    static Node mn; //maximum node
+    static int ms;  // maximum sum
     static class Node{
         int data;
         ArrayList<Node> children = new ArrayList<>();

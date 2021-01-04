@@ -1,9 +1,5 @@
 import java.util.*;
-
-public class displayBinaryTree {
-    // state ==  1 (next element is left) , push it to the stack ,increase state
-    // state == 2 (next element is right) ,push it to the stack , increase state
-    // state == 3 pop out of the stack 
+public class tiltOfTree {
     static class Node{
         int data;
          Node left = null;
@@ -72,14 +68,31 @@ public class displayBinaryTree {
         str += root.right != null ? " " + root.right.data :  " .";
         System.out.println(str);
 
-
         display(root.left);
         display(root.right);
 
     }
+
+    static int tilt = 0;
+    public static int tilt(Node root){
+        if(root == null){
+            return 0;
+        }
+
+        int l = tilt(root.left);  //return the sum of the left subtree
+        int r = tilt(root.right); // retunr the sum of right subTree
+
+        int lTilt = Math.abs(l - r);  // local tilt
+        tilt += lTilt;
+
+        return l + r + root.data;
+    }
+
     public static void main(String[] args){
         Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
         Node root = constructBinaryTree(arr);
-        display(root);
+        // display(root);
+        tilt(root);
+        System.out.println(tilt);
     }
 }

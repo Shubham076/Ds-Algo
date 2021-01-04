@@ -1,9 +1,5 @@
 import java.util.*;
-
-public class displayBinaryTree {
-    // state ==  1 (next element is left) , push it to the stack ,increase state
-    // state == 2 (next element is right) ,push it to the stack , increase state
-    // state == 3 pop out of the stack 
+public class printSingleChildNodes {
     static class Node{
         int data;
          Node left = null;
@@ -72,14 +68,31 @@ public class displayBinaryTree {
         str += root.right != null ? " " + root.right.data :  " .";
         System.out.println(str);
 
-
         display(root.left);
         display(root.right);
 
     }
+
+    public static void printSingleChild(Node node , Node parent){
+        if(node == null)
+            return;
+
+        if(parent != null && parent.left == node && parent.right == null){
+            System.out.println(parent.data);
+        }
+
+        if(parent != null && parent.right == node && parent.left == null){
+            System.out.println(parent.data);
+        }
+
+        printSingleChild(node.left, node);
+        printSingleChild(node.right, node);        
+    }
     public static void main(String[] args){
         Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
         Node root = constructBinaryTree(arr);
-        display(root);
+        // display(root);
+        printSingleChild(root, null);
     }
+
 }

@@ -1,9 +1,5 @@
 import java.util.*;
-
-public class displayBinaryTree {
-    // state ==  1 (next element is left) , push it to the stack ,increase state
-    // state == 2 (next element is right) ,push it to the stack , increase state
-    // state == 3 pop out of the stack 
+public class largestBSTSubtree {
     static class Node{
         int data;
          Node left = null;
@@ -77,9 +73,53 @@ public class displayBinaryTree {
         display(root.right);
 
     }
+
+    static class bstPair{
+        boolean isBST;
+        int max;
+        int min;
+        Node node;  //max node
+        int size;    //mas size
+    }
+
+    public static bstPair isBSt(Node root){
+        if(root == null){
+            bstPair bp = new bstPair();
+            bp.isBST = true;
+            bp.max = Integer.MIN_VALUE;
+            bp.min = Integer.MAX_VALUE;
+            bp.node = null;
+            bp.size = 0;
+            return bp;
+        }
+
+        bstPair l = isBSt(root.left);
+        bstPair r = isBSt(root.right);
+        bstPair mp = new bstPair();
+        mp.isBST = l.isBST && r.isBST && root.data >= l.max && root.data <= r.min;
+
+        mp.min = Math.min(root.data , Math.min(l.min , r.min));
+        mp.max = Math.max(root.data , Math.max(l.max , r.max));
+
+        if(mp.isBST){
+            mp.node = root;
+            mp.size = l.size + r.size + 1;
+        }
+        else if(l.size > r.size){
+            mp.node = l.node;
+            mp.size = l.size; 
+        }
+        else{
+            mp.node = r.node;
+            mp.size = r.size;
+        }
+        return mp;
+    }
     public static void main(String[] args){
         Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
         Node root = constructBinaryTree(arr);
-        display(root);
+        // display(root);
+        bstPair p = isBSt(root);
+        System.out.println(p.node.data + "@" + p.size);
     }
 }
