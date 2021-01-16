@@ -1,48 +1,52 @@
+import java.util.Scanner;
+
 public class quickSort {
+
     private static void print(int[] arr) {
-        for(int i : arr){
-            System.out.print(i+" ");
+        for (int i : arr) {
+            System.out.print(i + " ");
         }
     }
 
     public static void main(String[] args) {
-        int[] arr = {2,1,4,6,9,5};
-        quick(arr , 0 , arr.length -1);
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = scn.nextInt();
+        }
+        scn.close();
+        quick(arr, 0, arr.length - 1);
         print(arr);
     }
 
-    private static void quick(int[] arr, int f, int l) {
-        if(f >= l){
-            return ;
-        }
-        int pivot = arr[(f + l) / 2];
-        int left = f;
-        int right = l;
-        while(left <= right){
-
-            while(arr[left] < pivot){
-                left++;
-
-            }
-
-            while(arr[right] > pivot){
-                right--;
-            }
-
-            if(left <= right){
-                int temp = arr[left];
-                arr[left] = arr[right];
-                arr[right] = temp;
-                left++;
-                right--;
-            }
-
+    public static void quick(int[] arr, int lo, int hi) {
+        if (lo > hi) {
+            return;
         }
 
-        quick(arr , f , right);
-        quick(arr,  left , l);
-        
+        int pivot = arr[hi];
+        int pi = partioning(arr, pivot);
+        quick(arr, lo, pi - 1);
+        quick(arr, pi + 1, hi);
     }
 
+    public static int partioning(int[] arr, int pivot) {
+        int i = 0;
+        int j = 0;
+        while (i < arr.length) {
+            if (arr[i] > pivot) {
+                i++;
+            } else {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                i++;
+                j++;
+            }
+        }
+
+        return j - 1;
+    }
 
 }

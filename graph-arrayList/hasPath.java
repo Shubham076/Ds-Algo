@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class hasPath {
-   static class Edge {
+   static class Edge{
       int src;
       int nbr;
       int wt;

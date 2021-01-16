@@ -2,7 +2,7 @@ package recursion;
 
 import java.util.Scanner;
 
-public class allindicesofnumber {
+public class allIndexOfANumber{
 
 	public static void main(String[] args) {
 		

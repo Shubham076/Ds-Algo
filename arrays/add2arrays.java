@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class add2arrays {
 
 
@@ -8,6 +7,7 @@ public static void main(String[] args) throws Exception {
     Scanner scn = new Scanner(System.in);
     int n = scn.nextInt();
     int[] arr1 = new int[n];
+    scn.close();
 
     for(int i = 0; i < n; i++){
         arr1[i] = scn.nextInt();

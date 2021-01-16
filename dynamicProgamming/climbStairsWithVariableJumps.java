@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.*;
 
 public class climbStairsWithVariableJumps {
@@ -9,6 +8,7 @@ public class climbStairsWithVariableJumps {
         int n = scn.nextInt();
         int[] dp = new int[n + 1];
         int[] arr = new int[n];
+        scn.close();
         
         for(int i = 0; i < n; i++){
             arr[i] = scn.nextInt();

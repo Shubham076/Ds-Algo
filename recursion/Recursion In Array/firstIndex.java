@@ -2,7 +2,7 @@ package recursion;
 
 import java.util.Scanner;
 
-public class searchfirstindex {
+public class firstIndex{
 
 	public static void main(String[] args) {
 		

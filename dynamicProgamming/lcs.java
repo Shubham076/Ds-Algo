@@ -1,9 +1,10 @@
+import java.util.*;
 class lcs{
     public static void main(String[] args) {
-
-        String s1 = "ababab";
-        String s2 = "baabaa";
-
+        Scanner scn = new Scanner(System.in);
+        String s1 = scn.nextLine();
+        String s2 = scn.nextLine();
+        scn.close();
         char[] x = s1.toCharArray();
         char[] y = s2.toCharArray();
 
