@@ -8,7 +8,7 @@ import java.util.*;
       Scanner scn = new Scanner(System.in);
       int a = scn.nextInt();
       int b = scn.nextInt();
-      
+      scn.close();
       int divisor = a;
       int dividend = b;
       

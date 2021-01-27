@@ -6,7 +6,7 @@ public class maxSubArray {
         int omax = arr[0];
 
         for(int i = 1; i < arr.length; i++){
-            if(curMax > 0){
+            if(curMax >= 0){
                 curMax += arr[i];
             }
             else curMax = arr[i];

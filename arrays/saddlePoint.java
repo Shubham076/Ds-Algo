@@ -35,7 +35,7 @@ class saddlePoint {
             boolean flag = true;
 
             for(int k = 0; k < arr.length; k++){
-                if( arr[k][li] > arr[i][li]){
+                if(arr[k][li] > arr[i][li]){
                     flag = false;
                     break;
                 }

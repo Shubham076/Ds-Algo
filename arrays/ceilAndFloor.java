@@ -13,7 +13,7 @@ class ceilAndFloor{
         int ceil = Integer.MAX_VALUE;
         int floor = Integer.MIN_VALUE;
 
-         System.out.println("Using binary search");   
+        System.out.println("Using binary search");   
         int low = 0;
         int high = arr.length - 1;
         while(low <= high){

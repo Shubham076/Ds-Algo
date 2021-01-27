@@ -1,0 +1,9 @@
+8
+A B false
+A D false
+B C false
+C D false
+D E false
+E F false
+F G false
+E G false

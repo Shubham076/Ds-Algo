@@ -6,7 +6,7 @@ import java.util.*;
       Scanner scn = new Scanner(System.in);
       int n = scn.nextInt();
       int sb = scn.nextInt();
-      int  db= scn.nextInt();
+      int db = scn.nextInt();
       
       int dec = getValueInDecimal(n , sb);
       int ans = getValueInDestinationBase(dec , db);

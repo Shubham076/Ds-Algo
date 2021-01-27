@@ -7,7 +7,6 @@ public class rotateNumber {
         int n = scn.nextInt();
         int k = scn.nextInt();
         scn.close();
-
         printRotate( n , k);
     }
 
@@ -23,9 +22,7 @@ public class rotateNumber {
 
         // for handling very big numbers
         k = k % nod;
-
         // for handling negative rotation : instead of rotating negative we should convert negative to positive
-
         if( k < 0){
             k = k + nod;
         }
@@ -33,11 +30,9 @@ public class rotateNumber {
         int mul = 1;
         int div = 1 ;
         for(int i = 1; i <= nod; i++){
-
             if( i <= k){
                 div = div * 10;
             }
-
             else{
                 mul = mul * 10;
             }
@@ -46,11 +41,8 @@ public class rotateNumber {
 
         int r = n % div;
         int q = n / div;
-
         int rot = (r * mul) + q;
         System.out.print(rot);
-
-        
     }
     
 }

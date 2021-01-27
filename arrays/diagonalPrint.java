@@ -23,12 +23,9 @@ class diagonalPrint {
     public static void diagonal(int[][] arr) {
 
         for(int gap = 0; gap < arr.length; gap++){
-
             for(int i = 0,j = gap ; j < arr[0].length; j++,i++){
-
                 System.out.print(arr[i][j] + " ");
             }
-
             System.out.println();
         }
     }

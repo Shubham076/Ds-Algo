@@ -3,6 +3,11 @@ import java.util.*;
 
 public class sort012{
 
+// splitting areas into 4 parts
+// 0 --- j - 1 => 0 area
+// j -- i - 1 => 1 area
+// k --- n(end of array) == 2 array
+// i---- k  unknowns 
     public static void Sort012(int[] arr) {
         //write your code here
         int i = 0;

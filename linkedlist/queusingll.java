@@ -1,4 +1,3 @@
-package linkedlist;
 
 public class queusingll {
 	
@@ -20,12 +19,12 @@ public class queusingll {
 		
 		public void enqueue(int data)throws Exception
 		{
-			list.addfirst(data);
+			list.addlast(data);
 		}
 		
 		public int dequeue()throws Exception
 		{
-			int rv=list.removeatlast();
+			int rv = list.removeatfirst();
 			return rv;
 		}
 		public void display()throws Exception

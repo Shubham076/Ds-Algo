@@ -1,8 +1,7 @@
 import java.util.Stack;
 public class duplicatesBrackets {
     public static void main(String[] args){
-        String s1 = "(a+b)+((c+d))";
-        String s2 = "((a+b)+(c+d))";
+        String s2 = "(a + b) + ((c + d))";
 
         Stack<Character> s = new Stack<>();
         for(int i = 0; i < s2.length(); i++){

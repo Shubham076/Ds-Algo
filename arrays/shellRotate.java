@@ -70,8 +70,8 @@ public class shellRotate {
     
     public static int[] fillOnedFromShell(int[][] a, int s)
     {
-    	int minr = s-1;
-    	int minc = s-1;
+    	int minr = s - 1;
+    	int minc = s - 1;
     	int maxr = a.length - s;
     	int maxc = a[0].length - s;
     	int sz = 2 * (maxr - minr + maxc - minc);
@@ -79,7 +79,7 @@ public class shellRotate {
     	int[] oned = new int[sz];
     	
     	int idx = 0;
-    	for(int i = minr, j = minc; i<= maxr; i++)
+    	for(int i = minr, j = minc; i <= maxr; i++)
     	{
     		oned[idx] = a[i][j];
     		idx++;
@@ -111,8 +111,8 @@ public class shellRotate {
     
     public static void fillShellFromOned(int[][] a, int s, int[] oned)
     {
-    	int minr = s-1;
-    	int minc = s-1;
+    	int minr = s - 1;
+    	int minc = s - 1;
     	int maxr = a.length - s;
     	int maxc = a[0].length - s;
     	

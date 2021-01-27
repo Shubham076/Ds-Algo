@@ -9,9 +9,8 @@ public class nthSmallest {
 
 		Scanner scn = new Scanner(System.in);
 		int k = scn.nextInt();
-
 		int[] arr = { 10, 25, 31, 4, 15, 81, 90, 23, 78, 12 };
-
+		
 		PriorityQueue<Integer> minheap = new PriorityQueue<>();
 		PriorityQueue<Integer> maxheap = new PriorityQueue<>(Collections.reverseOrder());
 		for (int i : arr) {

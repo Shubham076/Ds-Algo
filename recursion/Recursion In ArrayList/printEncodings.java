@@ -1,10 +1,9 @@
 import java.util.Scanner;
-class main{
+class printEncodings{
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         String s = scn.next();
-        print(s ,"");
-        
+        print(s ,"");       
 
     }
 

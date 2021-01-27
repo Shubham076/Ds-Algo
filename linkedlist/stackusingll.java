@@ -1,5 +1,3 @@
-package linkedlist;
-
 public class stackusingll {
 	
 	private linkedlist list;
