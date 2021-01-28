@@ -1,32 +1,18 @@
-package Heap;
-
 public class heapclient {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		heap h=new heap();
-	h.add(10);
-	h.add(20);
-	h.add(30);
-	h.add(40);
-	h.add(5);
-	h.add(3);
+		Heap<Integer> h = new Heap<>();
+			h.add(12);
+			h.add(5);
+			h.add(9);
+			h.add(4);
+			h.add(3);
+
 		h.display();
-		
 		System.out.println();
-		
-		System.out.println(h.size()+"---------");
-		
+		System.out.println(h.peek());
 		h.remove();
 		h.display();
-		
-		System.out.println();
-		
-		h.remove();
-		h.display();	
 	}
-	
-	
 
 }

@@ -1,5 +1,5 @@
-class bst{
-	  static class Node{
+class longestCommonAncestor{
+	static class Node{
 	 	int data;
 	 	Node left;
 	 	Node right;
@@ -40,9 +40,28 @@ class bst{
 
     	}
 
+    	public static int lca(Node root , int d1 , int d2){
+    		if(root == null){
+    			return -1;
+    		}
+
+    		if(d1 < root.data && d2 < root.data){
+    			return lca(root.left , d1 , d2);
+    		}
+    		else if(d1 > root.data && d2 > root.data){
+    			return lca(root.right , d1 , d2);
+    		}
+    		else{
+    			return root.data;
+    		}
+    	}
+
 	public static void main(String[] args){
 		int[] arr = {12, 25, 37, 50, 60, 72, 87};
 		Node root = construct(arr , 0 , arr.length - 1);
 		display(root);
+
+		System.out.println();
+		System.out.println(lca(root, 60, 87));
 	}
 }

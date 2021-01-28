@@ -1,5 +1,5 @@
-class bst{
-	  static class Node{
+class replaceSumOfLargerInBst{
+	static class Node{
 	 	int data;
 	 	Node left;
 	 	Node right;
@@ -40,9 +40,26 @@ class bst{
 
     	}
 
+    	static int sum = 0;
+    	public static void replaceLarger(Node root){
+    		if(root == null){
+    			return;
+    		}
+
+    		replaceLarger(root.right);
+    		int od = root.data;
+    		root.data = sum;
+    		sum += od;
+    		replaceLarger(root.left);
+    	}
+
 	public static void main(String[] args){
-		int[] arr = {12, 25, 37, 50, 60, 72, 87};
+		int[] arr = {12, 25, 37, 50, 62, 75, 87};
 		Node root = construct(arr , 0 , arr.length - 1);
+		display(root);
+
+		System.out.println();
+		replaceLarger(root);
 		display(root);
 	}
 }

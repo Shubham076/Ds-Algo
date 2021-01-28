@@ -1,8 +1,7 @@
 import java.util.Scanner;
 public class quaraticequation {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args){
 		Scanner scn = new Scanner(System.in);
 		 int a = scn.nextInt();
 		 int b = scn.nextInt();

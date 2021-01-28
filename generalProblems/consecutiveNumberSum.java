@@ -11,6 +11,7 @@ class consecutiveNumberSum{
 		int N = scn.nextInt();
 		int n = 2;
 		int count = 0;
+		scn.close();
 		while((2 * N + n - n * n) > 0){
 			double a = (float)(2 * N + n - n * n) / (2 * n);
 			if(a  - Math.floor(a) == 0){

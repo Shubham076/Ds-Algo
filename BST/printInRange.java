@@ -1,5 +1,5 @@
-class bst{
-	  static class Node{
+class printInRange{
+	static class Node{
 	 	int data;
 	 	Node left;
 	 	Node right;
@@ -39,10 +39,31 @@ class bst{
 	        display(root.right);
 
     	}
+    	//pir print in range
+    	public static void pir(Node root , int d1 , int d2){
+    		if(root == null){
+    			return;
+    		}
+
+    		if(d1 < root.data && d2 < root.data){
+    			pir(root.left , d1 , d2);
+    		}
+    		else if(d1 > root.data && d2 > root.data){
+    			pir(root.right , d1 , d2);
+    		}
+    		else{
+    			pir(root.left, d1 , d2);
+    			System.out.print(root.data + " ");
+    			pir(root.right , d1 , d2);
+    		}
+    	}
 
 	public static void main(String[] args){
 		int[] arr = {12, 25, 37, 50, 60, 72, 87};
 		Node root = construct(arr , 0 , arr.length - 1);
 		display(root);
+
+		System.out.println();
+		pir(root , 27 , 72);
 	}
 }

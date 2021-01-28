@@ -1,81 +1,93 @@
-
-package Heap;
-
 import java.util.ArrayList;
 
-public class heap {
-	
-	ArrayList<Integer> data=new ArrayList<>();
-	
-	public void add(int item)
-	{
-		data.add(item);
-		upheapify(data.size()-1);
-		
+// this.compareTo(other)
+// if it is +ve means this is greater
+// if it is 0 mean both are equal
+// if it is -ve means this is smaller 
+public class Heap <T>{
+	private ArrayList<T> data;
+
+	public Heap(){
+		data = new ArrayList<>();
 	}
 
-	private void upheapify(int ci) {
-		// TODO Auto-generated method stub
-		int pi=(ci-1)/2;
-		
-		if(data.get(ci)<data.get(pi))
-		{
-			swap(pi,ci);
+	private void swap(int i , int j){
+		T one = data.get(i);
+		T two = data.get(j);
+		data.set(i , two);
+		data.set(j , one);
+	}
+
+	private boolean isSmaller(int i , int j){
+		Comparable ith = (Comparable)data.get(i);
+		Comparable jth = (Comparable)data.get(j);
+		return ith.compareTo(jth) < 0;
+	}
+
+	public void add(T val){
+		data.add(val);
+		upheapify(data.size() - 1);
+	}
+
+// O(Logn) logn is the height of the tree
+	private void upheapify(int i){
+		if(i == 0){
+			return;
+		}
+
+		int pi = (i - 1) / 2;
+		if(isSmaller(i , pi)){
+			swap(i , pi);
 			upheapify(pi);
 		}
-		
 	}
 
-	private void swap(int i, int j) {
-		int ith=data.get(i);
-		int jth=data.get(j);
-		data.set(i, jth);
-		data.set(j, ith);
-		
-	}
-	public void display()
-	{
-		System.out.println(this.data);
-		
-	}
-	
-	public int size()
-	{
-		return this.data.size();
-	}
-		
-	public int remove()
-	{
-		swap(0,this.data.size()-1);
-		
-		int rv=this.data.remove(this.data.size()-1);
-		downheapify(0);
-		return rv;
-	}
-
-	private void downheapify(int pi) {
-		// TODO Auto-generated method stub
-		
-		int lc=2*pi+1;
-		int rc=2*pi+2; ////li=leftchild,    ri=right child  parent index;
-		int min=pi;
-		if(lc<this.data.size()&&data.get(lc)<data.get(min))
-		{
-			min=lc;
+	public T remove(){
+		if(data.size() == 0){
+			System.out.println("Heap underflow");
+			return null;
 		}
-		if(rc<this.data.size()&&data.get(rc)<data.get(min))
-			min=rc;
-		
-		if(min!=pi)
-		{
-			swap(pi,min);
+		swap(0 , data.size() - 1);
+		T val = data.remove(data.size() - 1);
+		downheapify(0);
+		return val;
+	}
+
+// O(Logn) logn is the height of the tree
+	private void downheapify(int pi){
+		int min = pi;
+		int li = 2 * pi + 1;
+		int ri = 2 * pi + 2;
+
+		if(li < data.size() && isSmaller(li , min)){
+			min = li;
+		}
+
+		if(ri < data.size() && isSmaller(ri , min)){
+			min = ri;
+		}
+
+		if(min != pi){
+			swap(pi , min);
 			downheapify(min);
 		}
-		
+	}	
+
+	public T peek(){
+		if(data.size() == 0){
+			System.out.println("Heap underflow");
+			return null;
+		}
+			return data.get(0);
 	}
-	
-	public int get()
-	{
-		return this.data.get(0);
+
+	public int size(){
+		return data.size();
+	}
+
+	public void display(){
+		for(int i = 0; i < data.size(); i++){
+			System.out.print(data.get(i) + " ");
+		}
 	}
 }

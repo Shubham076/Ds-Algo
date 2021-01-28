@@ -1,13 +1,13 @@
 import java.util.*;
   
-  public class Main{
+  public class anybaseToAnyBase{
   
   public static void main(String[] args) {
       Scanner scn = new Scanner(System.in);
       int n = scn.nextInt();
       int sb = scn.nextInt();
       int db = scn.nextInt();
-      
+      scn.close();
       int dec = getValueInDecimal(n , sb);
       int ans = getValueInDestinationBase(dec , db);
       

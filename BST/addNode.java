@@ -1,5 +1,5 @@
-class bst{
-	  static class Node{
+class addNode{
+	static class Node{
 	 	int data;
 	 	Node left;
 	 	Node right;
@@ -40,9 +40,31 @@ class bst{
 
     	}
 
+    	public static Node add(Node root , int val){
+    		if(root == null){
+    			Node n = new Node(val , null, null);
+    			return n;
+    		}
+
+    		if(val > root.data){
+    			root.right = add(root.right , val);
+    		}
+    		else if(val < root.data){
+    			root.left = add(root.left , val);
+    		}
+    		else{
+    			// nothing to do
+    		}
+
+    		return root;
+    	}
+
 	public static void main(String[] args){
-		int[] arr = {12, 25, 37, 50, 60, 72, 87};
+		int[] arr = {12, 25, 37, 50, 62, 72, 87};
 		Node root = construct(arr , 0 , arr.length - 1);
+		display(root);
+		System.out.println();
+		add(root, 60);
 		display(root);
 	}
 }
