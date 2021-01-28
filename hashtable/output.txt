@@ -1,0 +1,14 @@
+D - Delhi
+A - Anubhav
+B - Bhoomika
+C - Chiya
+S - Shubham
+Size is 5
+null
+Shubham
+[D, A, B, C, S]
+
+D - Delhi
+A - Anubhav
+C - Chiya
+S - Shubham
