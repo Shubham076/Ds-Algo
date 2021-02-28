@@ -7,8 +7,6 @@ class main{
         int c = scn.nextInt();
         int[][] arr = new int[n][n];
         printKnightsTour(arr, r, c, n*n, 1);
-        
-
     }
 
     public static void displayBoard(int[][] chess) {

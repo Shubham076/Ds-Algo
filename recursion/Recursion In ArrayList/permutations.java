@@ -24,11 +24,8 @@ public class permutations {
 		ArrayList<String> myresult = new ArrayList<>();
 		ArrayList<String> recresult = getpermutation(ros); //// recresult is recursion result;
 
-		for (int i = 0; i < recresult.size(); i++)
-
-		{
+		for (int i = 0; i < recresult.size(); i++){
 			String rrs = recresult.get(i);
-
 			for (int j = 0; j <= rrs.length(); j++) {
 				String a = rrs.substring(0, j) + cc + rrs.substring(j);
 				myresult.add(a);

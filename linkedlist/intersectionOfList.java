@@ -49,6 +49,7 @@ class intersectionOfList{
 
      public static void intersection(LinkedList l1 , LinkedList l2){
         	int k = Math.abs(l1.size - l2.size);
+            System.out.println(k);
         	Node h1 = l1.head;
         	Node h2 = l2.head;
 

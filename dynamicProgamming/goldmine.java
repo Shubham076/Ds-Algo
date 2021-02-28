@@ -21,11 +21,14 @@ public class goldmine {
          for (int i = arr.length - 1; i >= 0; i--) {
             if (j == arr[0].length - 1) {
                dp[i][j] = arr[i][j];
-            } else if (i == arr.length - 1) {
+            }
+             else if (i == arr.length - 1) {
                dp[i][j] = arr[i][j] + Math.max(dp[i][j + 1], dp[i - 1][j + 1]);
-            } else if (i == 0) {
+            } 
+            else if (i == 0) {
                dp[i][j] = arr[i][j] + Math.max(dp[i][j + 1], dp[i + 1][j + 1]);
-            } else {
+            }
+             else {
                dp[i][j] = arr[i][j] + Math.max(dp[i][j + 1], Math.max(dp[i + 1][j + 1], dp[i - 1][j + 1]));
             }
          }

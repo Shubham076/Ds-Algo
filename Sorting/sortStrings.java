@@ -8,7 +8,7 @@ class sortStrings{
 			arr[i] = scn.next();
 		}
 
-		sort(arr , 0 , arr.length - 1);
+		sort(arr, 0, arr.length - 1);
 		for(String i : arr){
 			System.out.print(i + " ");
 		}
@@ -21,11 +21,11 @@ class sortStrings{
 
 		String pivot = arr[hi];
 		int pi = getPivotIndex(arr , pivot);
-		sort(arr , lo , pi - 1);
-		sort(arr , pi + 1 , hi);
+		sort(arr, lo, pi - 1);
+		sort(arr, pi + 1, hi);
 	}
 
-	public static int getPivotIndex(String[] arr , String pivot){
+	public static int getPivotIndex(String[] arr, String pivot){
 		int i = 0;
 		int j = 0;
 		while(i < arr.length){
@@ -33,7 +33,7 @@ class sortStrings{
 				i++;
 			}
 			else{
-				swap(arr , i , j);
+				swap(arr, i, j);
 				i++;
 				j++;
 			}
@@ -42,7 +42,7 @@ class sortStrings{
 			return j - 1;
 	}
 
-	public static void swap(String[] arr , int i , int  j){
+	public static void swap(String[] arr, int i, int  j){
 		String temp = arr[i];
 		arr[i] = arr[j];
 		arr[j] = temp;

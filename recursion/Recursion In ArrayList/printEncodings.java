@@ -45,7 +45,6 @@ class printEncodings{
         print(ros , ans + c);
         }
 
-
     }
 
 }

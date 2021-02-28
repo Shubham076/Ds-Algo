@@ -21,7 +21,6 @@ class removerepeatingPermutations{
                 visited[(int)(c - 'a')] = true;
                 String ros = s.substring(0 , i)  + s.substring(i + 1);
                 printPermutations(ros,  ans + c, visited);
-
             }
         }
     }

@@ -9,9 +9,9 @@ public class arrangeBuildings {
         long os = 1;
         long ob = 1;
 
-        for(long i =2; i <= n; i++){
-            long ns = ob;
-            long nb = ob + os;
+        for(long i = 2; i <= n; i++){
+            long ns = ob + os;
+            long nb = os;
 
             ob = nb;
             os = ns;

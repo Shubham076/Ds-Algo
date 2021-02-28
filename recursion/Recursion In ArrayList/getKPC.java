@@ -31,11 +31,7 @@ public class getKPC {
             }
         }
         
-        return mr;
-        
-        
-    
-        
+        return mr;    
     }
 
     public static void printKPC(String s , String ans) {
@@ -49,8 +45,5 @@ public class getKPC {
         for(int i = 0; i < S.length(); i++){
             printKPC(s.substring(1) , ans + S.charAt(i));
         }
-
-
     }
-
 }

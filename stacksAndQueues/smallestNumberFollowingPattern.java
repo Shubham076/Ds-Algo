@@ -13,7 +13,7 @@ class smallestNumberFollowingPattern{
 				num++;
 			}
 			else{
-				s.push();
+				s.push(num);
 				num++
 				while(s.size() > 0){
 					System.out.print(s.pop());

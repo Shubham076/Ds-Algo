@@ -11,25 +11,34 @@ public class LevelOrderLineWiseZigZag {
     }
 
     static void LevelOrder(Node root){
-     Stack<Node> s = new Stack<>();
-     Stack<Node> cs = new Stack<>();   //childStack
+    Stack<Node> stack = new Stack<>();
+      stack.add(node);
+    Stack<Node> cstack = new Stack<>();
+      int level = 0;
 
-     s.push(root);
-     
-     while(s.size() > 0){
-    Node n = s.pop();
-    System.out.print(n.data+" ");
-    for(Node child : n.children){
-         cs.push(child);
-     }
+      while(stack.size() > 0){
+        node = stack.pop();
+        System.out.print(node.data + " ");
 
-     if(s.size() == 0){
-         s = cs;
-         cs = new Stack<>();
-         System.out.println();
-     }
-      
-    }
+        if(level % 2 == 0){
+          for(int i = 0; i < node.children.size(); i++){
+            Node child = node.children.get(i);
+            cstack.push(child);
+          }
+        } else {
+          for(int i = node.children.size() - 1; i >= 0; i--){
+            Node child = node.children.get(i);
+            cstack.push(child);
+          }
+        }
+
+        if(stack.size() == 0){
+          stack = cstack;
+          cstack = new Stack<>();
+          level++;
+          System.out.println();
+        }
+      }
 }
     public static void main(String[] args) {
 

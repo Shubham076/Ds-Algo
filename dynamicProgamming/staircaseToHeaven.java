@@ -14,7 +14,7 @@ class staircaseToHeaven{
 
         for(int i= 2 ; i < ways.length; i++){
 
-            ways[i] = ways[i-1] + ways[i - 2];
+            ways[i] = ways[i - 1] + ways[i - 2];
         }
 
         return ways[n];

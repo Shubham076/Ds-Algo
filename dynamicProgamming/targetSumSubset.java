@@ -17,6 +17,7 @@ public class targetSumSubset {
         for(int i = 0; i < dp.length; i++){
             for(int j = 0; j < dp[0].length; j++){
 
+                // blank subset 2^0 = 1
                 if(i == 0 && j== 0){
                     dp[i][j] = true;
                 }
@@ -34,7 +35,7 @@ public class targetSumSubset {
 
                     // when number is included
                     else{
-                        int val = arr[i-1];
+                        int val = arr[i - 1];
                         if(j >= val){
                             if(dp[i - 1][j - val]){
                                 dp[i][j] = true;

@@ -64,12 +64,12 @@ public class segmentTree {
 			this.display(node.left);
 		}
 		
-		if(node.right!=null) {
+		if(node.right ! =null) {
 			this.display(node.right);
 		}
 	}
 	
-	public int query(int qsi,int qei) {
+	public int query(int qsi, int qei) {
 		return this.query(this.root, qsi, qei);
 	}
 
@@ -77,20 +77,17 @@ public class segmentTree {
 		// TODO Auto-generated method stub
 		
 //		completely inside the node
-		if(node.startInterval>=qsi&&node.endInterval<=qei) {
+		if(node.startInterval >= qsi && node.endInterval <= qei) {
 			return node.data;
 		}
-		else if(node.startInterval>qei||node.endInterval<qsi) {
+		else if(node.startInterval > qei || node.endInterval < qsi) {
 			return 0; //completely outside the node interval
 		}
-		else //overlapping case
-			{int leftAns=this.query(node.left, qsi, qei);
-		int rightAns=this.query(node.right, qsi, qei);
-		return leftAns+rightAns;
-			}
-		
-		
-		
+		else {//overlapping case
+			int leftAns = this.query(node.left, qsi, qei);
+			int rightAns = this.query(node.right, qsi, qei);
+			return leftAns + rightAns;
+		}
 	}
 	
 	public void update(int index,int newValue) {
@@ -100,15 +97,15 @@ public class segmentTree {
 
 	private int update(Node node, int index, int newValue) {
 		// TODO Auto-generated method stub
-		if(index>=node.startInterval&&index<=node.endInterval) {
-			if(index==node.startInterval&&index==node.endInterval) {
-				node.data=newValue;
+		if(index >= node.startInterval && index <= node.endInterval) {
+			if(index == node.startInterval && index == node.endInterval) {
+				node.data = newValue;
 			}
 			
 			else {
-				int leftAns=this.update(node.left, index, newValue);
-				int rightAns=this.update(node.right, index, newValue);
-				return leftAns+rightAns;
+				int leftAns = this.update(node.left, index, newValue);
+				int rightAns = this.update(node.right, index, newValue);
+				return leftAns + rightAns;
 			}
 		}
 		return node.data;

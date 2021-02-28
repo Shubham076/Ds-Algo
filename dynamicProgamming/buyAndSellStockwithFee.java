@@ -1,5 +1,6 @@
 import java.util.Scanner;
-
+//bsp bought state profit
+// ssp sold state profit
 public class buyAndSellStockwithFee {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);

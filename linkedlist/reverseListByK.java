@@ -75,7 +75,7 @@ class reverseListByK{
                 }
             }
             else{
-                //f size is not enough then we dont reverse
+                //if size is not enough then we dont reverse
                 int os = this.size;
                 for(int i = 0 ; i < os; i++){
                     cur.addLast(this.removeFirst());

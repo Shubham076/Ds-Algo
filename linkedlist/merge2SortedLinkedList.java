@@ -107,13 +107,11 @@ public class merge2SortedLinkedList {
             } else {
                 Node node = new Node();
                 node.data = val;
-
                 Node temp = head;
                 for (int i = 0; i < idx - 1; i++) {
                     temp = temp.next;
                 }
                 node.next = temp.next;
-
                 temp.next = node;
                 size++;
             }

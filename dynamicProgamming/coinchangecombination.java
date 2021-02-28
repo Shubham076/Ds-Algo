@@ -1,24 +1,26 @@
-import java.io.*;
 import java.util.*;
+
+//meaning of cell
+// how many combinations we can generate for that cell if we have infinite supply of coins
 
 public class coinchangecombination {
 
     public static void main(String[] args) throws Exception {
         Scanner scn = new Scanner(System.in);
         int n = scn.nextInt();
-        int[] arr = new int[n];
+        int[] coins = new int[n];
         
         for(int i = 0; i < n; i++){
-            arr[i] = scn.nextInt();
+            coins[i] = scn.nextInt();
         }
         
         int amount = scn.nextInt();
         int[] dp = new int[amount + 1];
         dp[0] = 1;
         
-        for(int i = 0 ; i < arr.length; i++){
-            for(int j = arr[i]; j < dp.length; j++){
-                dp[j] += dp[j - arr[i]];
+        for(int i = 0 ; i < coins.length; i++){
+            for(int j = coins[i]; j < dp.length; j++){
+                dp[j] += dp[j - coins[i]];
             }
         }
         

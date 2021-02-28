@@ -9,7 +9,7 @@ public class printnqueen {
 
 	}
 
-	public static void printnqueens(boolean[][] board, int row,String str) {
+	public static void printnqueens(boolean[][] board, int row, String str) {
 		if (row == board.length) {
 			System.out.println(str);
 			return;
@@ -20,7 +20,7 @@ public class printnqueen {
 		for (int col = 0; col < board[row].length; col++) {
 			if (issafe(board, row, col)) {
 				board[row][col] = true;
-			printnqueens(board, row + 1,str+"{"+(row+1)+"-"+(col+1)+"}");
+				printnqueens(board, row + 1, str + "{" + (row + 1) + "-" + (col + 1) + "}");
 				board[row][col] = false;
 			}
 		}

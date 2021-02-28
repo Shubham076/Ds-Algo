@@ -46,7 +46,6 @@ class mergeOverlappingIntervals{
 				top.et = Math.max(top.et , arr[i].et);
 
 			}
-		
 	}
 
 	Stack<Pair> h = new Stack<>();

@@ -6,8 +6,8 @@ class countBinaryStrings{
         int n = scn.nextInt();
         scn.close();
 
-        int oc0 = 1;
-        int oc1 = 1;
+        int oc0 = 1;   //strings end at 0
+        int oc1 = 1;   // strings end at 1
 
         for(int i = 2 ; i <= n; i++){
             int nc0 = oc1;

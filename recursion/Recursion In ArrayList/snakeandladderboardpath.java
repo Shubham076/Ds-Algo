@@ -30,7 +30,6 @@ public class snakeandladderboardpath {
 
 		}
 		ArrayList<String> rr = null;
-
 		ArrayList<String> myresult = new ArrayList<>();
 
 		for (int dice = 1; dice <= 6; dice++) {
@@ -49,20 +48,20 @@ public class snakeandladderboardpath {
 
 	}
 	
-	public static void printpath(int cur,int end,String ans)
+	public static void printpath(int cur, int end, String ans)
 	{
-		if(cur==end)
+		if(cur == end)
 		{
 			System.out.println(ans);
 			return;
 		}
-		if(cur>end)
+		if(cur > end)
 			return;
 		
 		
 		for(int dice = 1; dice <= 6; dice++)
 		{
-			printpath(cur+dice,end,ans+dice);
+			printpath(cur + dice, end, ans+dice);
 		}
 	}
 	

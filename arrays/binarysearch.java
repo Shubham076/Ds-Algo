@@ -1,7 +1,4 @@
-
-
 import java.util.Scanner;
-
 public class binarysearch {
 
 	public static void main(String[] args) {
@@ -10,7 +7,6 @@ public class binarysearch {
 		int[] arr = { 1, 5, 8, 9, 10 };
 
 		int j = scn.nextInt();
-
 		int i = Binarysearch(arr, j);
 
 		if (i == 1)

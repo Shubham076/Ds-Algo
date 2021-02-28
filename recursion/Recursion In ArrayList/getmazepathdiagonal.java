@@ -51,12 +51,12 @@ public class getmazepathdiagonal {
 			return;
 		
 		//horizontal movement
-		printmazepathd(sr,sc+1,er,ec,ans+"H");
+		printmazepathd(sr, sc+1, er, ec, ans+"H");
 		
 		//vertical movement
-		printmazepathd(sr+1,sc,er,ec,ans+"V");
+		printmazepathd(sr+1, sc, er, ec, ans+"V");
 		
 		//diagonal movement
-		printmazepathd(sr+1,sc+1,er,ec,ans+"D");
+		printmazepathd(sr+1, sc+1, er, ec, ans+"D");
 	}
 }

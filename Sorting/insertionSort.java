@@ -1,7 +1,4 @@
 import java.util.Scanner;
-
-
-
 public class insertionSort {
 
 public static void main(String[] args) {
@@ -26,7 +23,7 @@ public static void main(String[] args) {
         for(int i = 1; i < arr.length; i++){
             for(int j = i - 1; j >= 0; j--){
                 if(arr[j] > arr[j + 1]){
-                  swap(arr, i , j);
+                  swap(arr, i, j);
                 }
                 else{
                     break;

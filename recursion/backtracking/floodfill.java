@@ -22,10 +22,10 @@ class floodfill {
 
         // first mark the cell visited;
         visited[row][col] = true;
-        printPath(row -1, col, maps, visited , psf+"t");    //top call
-        printPath(row, col-1, maps, visited, psf+"l");  //left call
-        printPath(row+1, col, maps, visited, psf+"d"); //down call
-        printPath(row , col+1 , maps , visited , psf+"r"); //right call
+        printPath(row - 1, col, maps, visited , psf + "t");    //top call
+        printPath(row, col - 1, maps, visited, psf + "l");  //left call
+        printPath(row + 1, col, maps, visited, psf + "d"); //down call
+        printPath(row, col + 1, maps, visited, psf + "r"); //right call
 
         // if we dont find the path mark the cell unvisited for the different path
         visited[row][col] = false;

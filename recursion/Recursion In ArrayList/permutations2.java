@@ -11,7 +11,7 @@ public class permutations2 {
         }
 
         for(int i = l; i <= r; i++){
-            swap(arr , i , l);
+            swap(arr, i, l);
             printPermutations(arr, l + 1, r);
             swap(arr, i, l);
         }

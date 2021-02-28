@@ -1,5 +1,11 @@
 import java.util.Scanner;
 
+
+// four cases to handle
+// 1  0 - 0
+// 2  0 - non0
+// 3  non0 - 0
+// 4  non0 - non0
 public class countEncodings {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
@@ -18,7 +24,7 @@ public class countEncodings {
             }
 
             else if(s.charAt(i - 1) != '0' && s.charAt(i) == '0'){
-                if(s.charAt(i) == '1' || s.charAt(i) == '2'){
+                if(s.charAt(i - 1) == '1' || s.charAt(i - 1) == '2'){
                     dp[i] = (i >=2 ?  dp[i - 2] : 1);
                 }
                 else{

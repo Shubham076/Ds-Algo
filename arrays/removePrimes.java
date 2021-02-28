@@ -6,6 +6,9 @@ public class removePrimes {
         
         for(int i = al.size() - 1 ; i >= 0; i--){
             int n = al.get(i);
+            if(n == 1){
+                continue;
+            }
             if(checkPrime(n)){
                 al.remove(i);
             }
@@ -23,7 +26,7 @@ public class removePrimes {
     }
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
-        System.out.println("Enter the size of arrayList");
+        System.out.print("Enter the size of arrayList: ");
         int n = scn.nextInt();
         ArrayList < Integer > al = new ArrayList < > ();
         for (int i = 0; i < n; i++) {
