@@ -1,16 +1,13 @@
 //You are given an integer n. In one move, you can either multiply n by two or divide n by 6 (if it is divisible by 6
+// without the remainder).
+// Your task is to find the minimum number of moves needed to obtain 1
+// from n or determine if it's impossible to do that.
 
-without the remainder).
-
-Your task is to find the minimum number of moves needed to obtain 1
-from n or determine if it's impossible to do that.
-//
-
-    import java.util.Scanner;
-    import java.util.HashSet;
-    import java.util.Queue;
-    import java.util.ArrayDeque;
-    public class convertNTo1{
+import java.util.Scanner;
+import java.util.HashSet;
+import java.util.Queue;
+import java.util.ArrayDeque;
+public class convertNTo1{
      
         static class Pair{
             int val;

@@ -44,10 +44,7 @@ public class connectedComps {
           }
           
       }
-      
-       
       // write your code here
-
       System.out.println(comps);
    }
    

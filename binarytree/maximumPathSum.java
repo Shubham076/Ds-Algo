@@ -1,6 +1,6 @@
 import java.util.*;
-public class printSingleChildNodes {
-    static class Node{
+class maximumPathSum{
+	static class Node{
         int data;
          Node left = null;
          Node right = null;
@@ -58,7 +58,7 @@ public class printSingleChildNodes {
         return root;
     }
 
-    public static void display(Node root){
+     public static void display(Node root){
 
         if(root == null)
             return;
@@ -68,31 +68,31 @@ public class printSingleChildNodes {
         str += root.right != null ? " " + root.right.data :  " .";
         System.out.println(str);
 
+
         display(root.left);
         display(root.right);
 
     }
 
-    public static void printSingleChild(Node node , Node parent){
-        if(node == null)
-            return;
+    static int max = Integer.MIN_VALUE;
+    public static int maxpathSum(Node node){
+    	if(node == null) return 0;
 
-        if(parent != null && parent.left == node && parent.right == null){
-            System.out.println(parent.data);
-        }
+    	int lmax = Math.max(0, maxpathSum(node.left));
+    	int rmax = Math.max(0, maxpathSum(node.right));
 
-        if(parent != null && parent.right == node && parent.left == null){
-            System.out.println(parent.data);
-        }
+    	max = Math.max(max , lmax + node.data + rmax);
 
-        printSingleChild(node.left, node);
-        printSingleChild(node.right, node);        
+    	// returning max path upto that node
+    	return Math.max(lmax, rmax) + node.data;
     }
+
     public static void main(String[] args){
-        Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
-        Node root = constructBinaryTree(arr);
-        display(root);
-        // printSingleChild(root, null);
+    	Integer[] arr = {-10, 9, null, null, 20, 15, null, null, 7, null, null};
+    	// The optimal path is 15 -> 20 -> 7 with a path sum of 15 + 20 + 7 = 42.
+    	Node root = constructBinaryTree(arr);
+    	display(root);
+    	maxpathSum(root);
+    	System.out.println(max);
     }
-
 }

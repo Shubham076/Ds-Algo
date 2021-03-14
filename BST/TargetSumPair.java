@@ -56,6 +56,7 @@ class TargetSumPair{
     		}
     	}
 
+    	// O(nh) n nodes h height of tree
     	public static void targetPair(Node root, Node node, int target){
     		if(node == null){
     			return;
@@ -69,6 +70,41 @@ class TargetSumPair{
     			}
     		}
     		targetPair(root , node.right , target);
+    	}
+
+    	// O(N)
+    	public static void targetPair2(Node root, int target){
+    		ArrayList<Integer> l = new ArrayList<>();
+    		inOrder(root, l);
+    		int left = 0;
+    		int right = l.size() - 1;
+    		while(left < right){
+    			int val1 = l.get(left);
+    			int val2 = l.get(right);
+    			int data = val1 + val2;
+
+    			if(data > target){
+    				right--;
+    			}
+    			else if(data < target){
+    				left++;
+    			}
+    			else{
+    				System.out.println(val1 + " " + val2);
+    				left++;
+    				right--;
+    			}
+    		}
+    	}
+
+    	public static void inOrder(Node root, ArrayList<Integer> l){
+    		if(root == null){
+    			return;
+    		}
+
+    		inOrder(root.left, l);
+    		l.add(root.data);
+    		inOrder(root.right, l);
     	}
 
 	public static void main(String[] args){

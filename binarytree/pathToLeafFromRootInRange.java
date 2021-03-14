@@ -1,6 +1,6 @@
 import java.util.*;
-public class printSingleChildNodes {
-    static class Node{
+class pathToLeafFromRootInRange{
+	static class Node{
         int data;
          Node left = null;
          Node right = null;
@@ -68,31 +68,36 @@ public class printSingleChildNodes {
         str += root.right != null ? " " + root.right.data :  " .";
         System.out.println(str);
 
+
         display(root.left);
         display(root.right);
-
     }
 
-    public static void printSingleChild(Node node , Node parent){
-        if(node == null)
-            return;
-
-        if(parent != null && parent.left == node && parent.right == null){
-            System.out.println(parent.data);
-        }
-
-        if(parent != null && parent.right == node && parent.left == null){
-            System.out.println(parent.data);
-        }
-
-        printSingleChild(node.left, node);
-        printSingleChild(node.right, node);        
+    public static void solution(Node root, int lo ,int hi, String path, int sum){
+    	if(root.left == null && root.right == null){
+    		sum += root.data;
+    		path += root.data;
+    		if(sum >= lo && sum <= hi){
+    			System.out.println(path);
+    		}
+    	}
+    	else if(root.left == null){
+    		solution(root.right, lo, hi, path + root.data + " ", sum + root.data);
+    	}
+    	else if(root.right == null){
+    		solution(root.left, lo, hi, path + root.data + " ", sum + root.data);
+    	}
+    	else{
+    		solution(root.left, lo, hi, path + root.data + " ", sum + root.data);
+    		solution(root.right, lo, hi, path + root.data + " ", sum + root.data);
+    	}
     }
     public static void main(String[] args){
-        Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
+        Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, 40, null, null, 75, 62, 60, null, null,70, null, null, 87, null, null};
         Node root = constructBinaryTree(arr);
+        int lo = 150;
+        int hi = 250;
         display(root);
-        // printSingleChild(root, null);
+        solution(root, lo , hi, "", 0);
     }
-
 }

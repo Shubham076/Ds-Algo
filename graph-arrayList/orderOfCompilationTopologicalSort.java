@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class orderOfCompilationTopologicalSort {
    static class Edge {
       int src;
       int nbr;
@@ -41,21 +41,17 @@ public class Main {
       
        while(!s.isEmpty()){
        System.out.println(s.pop());
-   }
-      
-   }
-   
-  
+   }   
+}
    
    public static void topologicalSort(ArrayList<Edge>[] graph , int src , boolean[] visited , Stack<Integer> s){
        
        visited[src]  = true;
        for(Edge e : graph[src]){
            if(!visited[e.nbr]){
-               topologicalSort(graph , e.nbr , visited , s);
+               topologicalSort(graph, e.nbr, visited, s);
            }
        }
        s.push(src);
    }
-
 }
