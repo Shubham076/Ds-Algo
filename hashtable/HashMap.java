@@ -30,6 +30,7 @@ class HashMap <K , V>{
 		return Math.abs(hc) % buckets.length;
 	}
 
+	//bi = bucket index
 	private int getIdxWithinBucket(K key , int bi){
 		int di = 0;
 		for(HMNode node : this.buckets[bi]){

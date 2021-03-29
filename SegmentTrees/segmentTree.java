@@ -44,7 +44,7 @@ public class segmentTree {
 		String str = "";
 		if (node.left != null) {
 			str = str + "[ " + node.left.startInterval + "-" + node.right.endInterval + " ]and Data=" + node.left.data
-					+ "=>";
+			      + "=>";
 		} else {
 			str = str + "No left child =>";
 		}
@@ -53,55 +53,53 @@ public class segmentTree {
 
 		if (node.right != null) {
 			str = str + "<= Data=" + node.right.data + " [" + node.right.startInterval + "-" + node.right.endInterval
-					+ " ]";
+			      + " ]";
 
 		} else {
 			str = str + "<= No right child";
 		}
 		System.out.println(str);
-		
-		if(node.left!=null) {
+
+		if (node.left != null) {
 			this.display(node.left);
 		}
-		
-		if(node.right ! =null) {
+
+		if (node.right ! = null) {
 			this.display(node.right);
 		}
 	}
-	
+
 	public int query(int qsi, int qei) {
 		return this.query(this.root, qsi, qei);
 	}
 
 	private int query(Node node, int qsi, int qei) {
 		// TODO Auto-generated method stub
-		
+
 //		completely inside the node
-		if(node.startInterval >= qsi && node.endInterval <= qei) {
+		if (node.startInterval >= qsi && node.endInterval <= qei) {
 			return node.data;
-		}
-		else if(node.startInterval > qei || node.endInterval < qsi) {
+		} else if (node.startInterval > qei || node.endInterval < qsi) {
 			return 0; //completely outside the node interval
-		}
-		else {//overlapping case
+		} else { //overlapping case
 			int leftAns = this.query(node.left, qsi, qei);
 			int rightAns = this.query(node.right, qsi, qei);
 			return leftAns + rightAns;
 		}
 	}
-	
-	public void update(int index,int newValue) {
-		this.root.data=this.update(this.root,index,newValue);
-		
+
+	public void update(int index, int newValue) {
+		this.root.data = this.update(this.root, index, newValue);
+
 	}
 
 	private int update(Node node, int index, int newValue) {
 		// TODO Auto-generated method stub
-		if(index >= node.startInterval && index <= node.endInterval) {
-			if(index == node.startInterval && index == node.endInterval) {
+		if (index >= node.startInterval && index <= node.endInterval) {
+			if (index == node.startInterval && index == node.endInterval) {
 				node.data = newValue;
 			}
-			
+
 			else {
 				int leftAns = this.update(node.left, index, newValue);
 				int rightAns = this.update(node.right, index, newValue);

@@ -75,7 +75,7 @@ class kosarajuAlgo{
     	ArrayList<Edge>[] rgraph = new ArrayList[vtces];
     	for(int i = 0; i < vtces; i++){
     		graph[i] = new ArrayList<Edge>();
-    		rgraph[i] = new ArrayList<Edge>();
+    		rgraph[i] = new ArrayList<Edge>();   //reverse graph
     	}
     	int edges = f.nextInt();
     	for(int i = 0; i < edges; i++){

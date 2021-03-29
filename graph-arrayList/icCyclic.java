@@ -49,7 +49,7 @@ public class icCyclic {
    }
 
    public static boolean IsCyclic(ArrayList<Edge>[] graph, int src, boolean[] visited) {
-      ArrayDeque<Integer> queue = new ArrayDeque<>();
+      Queue<Integer> queue = new ArrayDeque<>();
       queue.add(src);
       while(queue.size() > 0){
          int rem = queue.remove();

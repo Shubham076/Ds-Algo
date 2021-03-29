@@ -15,7 +15,7 @@ class floodfill {
             return;
         }
 
-        if( row == maps.length-1 && col == maps[0].length -1){
+        if(row == maps.length-1 && col == maps[0].length -1){
             System.out.println(psf);
             return;
         } 
