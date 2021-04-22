@@ -3,6 +3,7 @@ class PaintHouse{
 	public static void main(String[] args){
 		Scanner scn = new Scanner(System.in);
 		int n = scn.nextInt();
+		// n house 3 colors
 		int[][] arr = new int[n][3];
 		for(int i = 0; i < n; i++){
 			for(int j = 0; j < 3; j++){

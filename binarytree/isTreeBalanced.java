@@ -89,10 +89,8 @@ public class isTreeBalanced {
         }
 
         return Math.max(lh , rh) + 1;
-
-
-
     }
+    
     public static void main(String[] args){
         Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, 51, null, null, 75, 62, 60, null, null, 70, null, null, null};
         Node root = constructBinaryTree(arr);

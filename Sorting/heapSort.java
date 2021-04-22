@@ -27,6 +27,7 @@ public class heapSort {
 
 	public static void sort(ArrayList<Integer> arr){
 		int n = arr.size();
+		//converting the array into heap
 		for(int pi = n / 2 - 1; pi >= 0; pi--){ // pi = parent index
 			downheapify(arr, n, pi);
 		}

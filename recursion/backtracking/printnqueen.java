@@ -5,7 +5,7 @@ public class printnqueen {
 		// TODO Auto-generated method stub
 
 		boolean[][] board = new boolean[4][4];
-	printnqueens(board, 0,"");
+		printnqueens(board, 0, "");
 
 	}
 
@@ -15,8 +15,6 @@ public class printnqueen {
 			return;
 		}
 
-		
-
 		for (int col = 0; col < board[row].length; col++) {
 			if (issafe(board, row, col)) {
 				board[row][col] = true;
@@ -24,30 +22,24 @@ public class printnqueen {
 				board[row][col] = false;
 			}
 		}
-		
+
 	}
 
 	public static boolean issafe(boolean[][] board, int row, int col) {
 		for (int i = row; i >= 0; i--) {
-			if (board[i][col])
-
-			{
+			if (board[i][col]){
 				return false;
 			}
 		}
 
 		for (int i = row, j = col; i >= 0 && j >= 0; i--, j--) {
-			if (board[i][j])
-
-			{
+			if (board[i][j]){
 				return false;
 			}
 		}
 
 		for (int i = row, j = col; i >= 0 && j < board.length; i--, j++) {
-			if (board[i][j])
-
-			{
+			if (board[i][j]){
 				return false;
 			}
 		}

@@ -76,7 +76,7 @@ public class invertBinaryTree {
 
     public static Node invert(Node root){
         if(root == null){
-            return root;
+            return null;
         }
 
         Node left = invert(root.left);
