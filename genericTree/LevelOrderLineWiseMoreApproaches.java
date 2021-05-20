@@ -11,11 +11,9 @@ public class LevelOrderLineWiseMoreApproaches {
 
         static void LevelOrder(Node root) {
             ArrayDeque<Node> q = new ArrayDeque<>();
-
             q.addLast(root);
             q.add(new Node(-1));
-
-
+            
             while (q.size() > 0) {
                 Node n = q.removeFirst();
 

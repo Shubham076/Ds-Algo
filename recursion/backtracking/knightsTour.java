@@ -1,12 +1,8 @@
-import java.util.Scanner;
-class main{
+class knightsTour{
     public static void main(String[] args) {
-        Scanner scn = new Scanner(System.in);
-        int n  = scn.nextInt();
-        int r = scn.nextInt();
-        int c = scn.nextInt();
+        int n  = 5;
         int[][] arr = new int[n][n];
-        printKnightsTour(arr, r, c, n*n, 1);
+        printKnightsTour(arr, 0, 0, n * n, 1);
     }
 
     public static void displayBoard(int[][] chess) {
@@ -16,7 +12,6 @@ class main{
             }
             System.out.println();
         }
-
         System.out.println();
     }
 
@@ -42,7 +37,6 @@ class main{
         printKnightsTour(chess , r + 1 , c - 2 , n , i + 1);
         printKnightsTour(chess , r - 1 , c - 2 , n , i + 1);
         printKnightsTour(chess , r - 2 , c - 1 , n , i + 1);
-
 
         chess[r][c] = 0;
 

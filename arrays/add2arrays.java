@@ -36,18 +36,11 @@ public static void main(String[] args) throws Exception {
         
         ans[k--] = sum % 10;
         carry = sum / 10;
-
-        
-        
     }
     
     for(int x : ans){
         System.out.println(x);
     }
-    
-    
-
  }
-
 }
 

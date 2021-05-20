@@ -285,7 +285,7 @@ public class linkedlist {
 	Node left;
 
 	// reverse by data recursive
-	private void dataRecursive(Node right,int level){
+	private void dataRecursive(Node right, int level){
 		if(right == null){
 			return;
 		}
