@@ -1,4 +1,4 @@
-
+//gap strategy
 class diagonalPrint {
     public static void main(String[] args) {
 
@@ -14,14 +14,11 @@ class diagonalPrint {
             for (int j = 0; j < arr[0].length; j++) {
                 System.out.print(arr[i][j] + " ");
             }
-
             System.out.println();
         }
-
     }
 
     public static void diagonal(int[][] arr) {
-
         for(int gap = 0; gap < arr.length; gap++){
             for(int i = 0,j = gap ; j < arr[0].length; j++,i++){
                 System.out.print(arr[i][j] + " ");
@@ -29,5 +26,4 @@ class diagonalPrint {
             System.out.println();
         }
     }
-
 }

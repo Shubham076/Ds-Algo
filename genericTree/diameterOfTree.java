@@ -42,8 +42,6 @@ public class diameterOfTree {
             d = dh + sdh + 2;
         }
         return dh + 1;
-
-
     }
 
     public static void main(String[] args) {

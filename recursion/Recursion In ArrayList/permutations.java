@@ -1,14 +1,9 @@
 import java.util.ArrayList;
-
 public class permutations {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		String a = "aabc";
 		System.out.println(getpermutation(a));
-
 		printpermutations(a, "");
-
 	}
 
 	public static ArrayList<String> getpermutation(String str) {
@@ -32,7 +27,6 @@ public class permutations {
 			}
 		}
 		return myresult;
-
 	}
 
 	public static void printpermutations(String ques, String ans) {

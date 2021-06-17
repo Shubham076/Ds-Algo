@@ -1,3 +1,7 @@
+/*
+no of ways of tiling an area  2 * n with 2 * 1 tiles
+m X 1
+*/
 import java.util.Scanner;
 class titlingDominos{
 	public static void main(String[] args){

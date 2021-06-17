@@ -61,7 +61,7 @@ class removeNode{
     			node.left = remove(node.left , val);
     		}
     		else{
-    			// work found the node
+    			// work found the node to be removed
     			if(node.left != null && node.right != null){
     				int lmax = max(node.left);
     				node.data = lmax;
@@ -69,6 +69,13 @@ class removeNode{
     				// now remove the data from the left subtree
     				node.left = remove(node.left , lmax);
     				return node;
+
+    				/*
+					efficient approach
+					Node lmax = max(node.left);
+                    lmax.right = node.right;
+    				return node.left;
+    				*/
     			}
     			else if(node.left != null){
     				return node.left;

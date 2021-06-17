@@ -1,12 +1,7 @@
-package recursion;
-
 public class printnqueen {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		boolean[][] board = new boolean[4][4];
 		printnqueens(board, 0, "");
-
 	}
 
 	public static void printnqueens(boolean[][] board, int row, String str) {

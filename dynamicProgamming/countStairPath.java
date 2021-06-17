@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.*;
 
 public class countStairPath {
-
     public static void main(String[] args) throws Exception {
         // write your code here
         Scanner scn = new Scanner(System.in);
@@ -14,15 +13,12 @@ public class countStairPath {
 
     // qb = question bank
     public static int getAllPaths(int n, int[] qb) {
-
         if (n == 0) {
             return 1;
         }
-
         if (n < 0) {
             return 0;
         }
-
         if (qb[n] > 0) {
             return qb[n];
         }
@@ -34,7 +30,5 @@ public class countStairPath {
 
         qb[n] = cp;
         return cp;
-
     }
-
 }

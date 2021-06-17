@@ -1,14 +1,9 @@
-package recursion;
-
 import java.util.Scanner;
-
 public class allIndexOfANumber{
 
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {		
 		Scanner scn = new Scanner(System.in);
 		int[] arr = { 4, 2, 4, 5, 9, 8, 4, 8 };
-		/// int[] ans=allindices(arr,0,4,0);
 		int[] ans = allindices(arr, 0, 4, 0);
 
 		for(int i : ans){

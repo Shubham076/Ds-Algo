@@ -91,6 +91,21 @@ public class diameterOfTree {
 
     }
 
+
+    //method2 O(N)
+    static int d;
+    public static int height(Node root){
+        if(root == null) return -1;
+
+        int lh = height(root.left);
+        int rh = height(root.right);
+
+        if(lh + rh + 2 > d){
+            d = lh + rh + 2;
+        }
+        return Math.max(lh, rh) + 1;
+    }
+
     public static void display(Node root){
 
         if(root == null)
@@ -109,9 +124,13 @@ public class diameterOfTree {
     public static void main(String[] args){
         Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
         Node root = constructBinaryTree(arr);
-        // display(root);
-        diaPair d = diameter(root);
-        System.out.println(d.dia);
-    }
+        d = 0;
+        System.out.print("Method1: ");
+        diaPair dp = diameter(root);
+        System.out.println(dp.dia);
 
+        System.out.print("Method2: ");
+        height(root);
+        System.out.println(d);
+    }
 }

@@ -2,6 +2,13 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
+//TIME COMPLEXITY of normal bruteforce solution applying merge sort
+// sorting of one array of n elements take O(NlogN)
+// we have k arrays of n elements each total time complexity is O(N * K * log(N * k)) ;
+
+
+//time complexity in case of using min heap;
+// O(n * k * log(k)) as insertion and deletion operation take O(k) time in heap where k is the number of elemnts in the heap
 public class mergeKSortedList {
 
     static class Pair implements Comparable<Pair> {
@@ -56,11 +63,6 @@ public class mergeKSortedList {
                     pq.add(rp);
                 }
             }
-        
-
-
-
-
         return ans;
     }
 }

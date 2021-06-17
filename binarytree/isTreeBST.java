@@ -112,8 +112,7 @@ public class isTreeBST {
             return false;
         }
 
-
-        return isbst(root.left, min, root.data) && isbst(root.right, root.data, max);
+        return isbst2(root.left, min, root.data) && isbst2(root.right, root.data, max);
     }
     public static void main(String[] args) {
         Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};

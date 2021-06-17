@@ -1,3 +1,4 @@
+//no of of ways we can paint n fence with c colors such that atmost 2 fence have came color
 import java.util.Scanner;
 class paintFence{
 	public static void main(String[] args){
@@ -14,8 +15,7 @@ class paintFence{
 			same = diff * 1;
 			diff = total * (c  - 1);
 			total = same + diff;
-		}
-
+		} 
 		System.out.println(total);
 	}
 }

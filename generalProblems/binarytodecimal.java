@@ -1,7 +1,5 @@
 import java.util.Scanner;
-
 public class binarytodecimal {
-
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
 		int n = scn.nextInt();
@@ -12,7 +10,5 @@ public class binarytodecimal {
 			p *= 2;
 		}
 		System.out.print(no);
-
 	}
-
 }

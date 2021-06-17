@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class inverse {
     public static void main(String[] args){
         Scanner scn = new Scanner(System.in);
@@ -22,8 +21,6 @@ public class inverse {
             n = n / 10;
             op++;
         }
-
         System.out.println(inv);
     }
-    
 }

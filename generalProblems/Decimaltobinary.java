@@ -1,7 +1,5 @@
 import java.util.Scanner;
-
 public class Decimaltobinary {
-
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
 		int n = scn.nextInt();
@@ -12,8 +10,6 @@ public class Decimaltobinary {
 			p *= 10;
 		}
 		System.out.print(no);
-
 	}
-
 }
 

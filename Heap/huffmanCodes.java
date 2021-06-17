@@ -1,6 +1,5 @@
 import java.util.PriorityQueue;
 class huffmanCode{
-    
     static class Node implements Comparable<Node>{
         int data;
         char c;
@@ -21,7 +20,6 @@ class huffmanCode{
     }
 
    public static void printCodes(Node root , String s){
-
         if(root == null){
             return;
         }
@@ -33,11 +31,9 @@ class huffmanCode{
 
         printCodes(root.left, s + "0");
         printCodes(root.right, s + "1");
-
     }
 
     public static Node generateTree(char[] arr , int[] freq){
-
         PriorityQueue<Node> q = new PriorityQueue<>();
         for(int i = 0; i < arr.length; i++){
             Node n = new Node(arr[i], freq[i], null, null);
@@ -50,7 +46,6 @@ class huffmanCode{
             Node n = new Node('-' , first.data + second.data , first , second);
             q.add(n);
         }
-
         return q.peek();
     }
 
@@ -59,8 +54,6 @@ class huffmanCode{
         int[] freq = {5, 9, 12, 13, 16, 45};
 
         Node root = generateTree(arr, freq);
-        printCodes(root, "");
-        
+        printCodes(root, "");   
     }
-
 }

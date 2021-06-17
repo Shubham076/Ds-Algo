@@ -1,8 +1,7 @@
-import java.util.*;
 // meaning of a cell
 // no of ways to reach destination from that cell
+import java.util.*;
 public class climbStairsWithVariableJumps {
-
     public static void main(String[] args) throws Exception {
         // write your code here
         Scanner scn = new Scanner(System.in);

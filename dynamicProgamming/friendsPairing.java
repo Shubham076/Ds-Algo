@@ -1,3 +1,12 @@
+/*
+each friend have 2 choices whether to do pairing or not
+let friends be 123
+case 1: 1 decide not to do pairing so ans  = no of ways = f(n - 1) where n be the number of friends
+case 2: 1 decide  to do pairing so ans = no of ways = as 1 can do pairing with n - 1 friends = (n - 1) * f(n - 2)
+
+//so final recurrence relation f(n) = f(n - 1) + (n - 1) * f(n - 2); 
+*/
+
 import java.util.Scanner;
 class friendsPairing{
 	public static void main(String[] args){
@@ -9,11 +18,11 @@ class friendsPairing{
 		dp[2] = 2;
 
 		for(int i = 3; i <= n; i++){
-			dp[i] = dp[i - 1] + (n - 1) * dp[n - 2];
+			dp[i] = dp[i - 1] + (i - 1) * dp[i - 2];
 		}
 
 		System.out.println(dp[n]);
-		print("123" , "");	
+		print("1234" , "");	
 	}
 
 
