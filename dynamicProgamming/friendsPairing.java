@@ -2,7 +2,7 @@
 each friend have 2 choices whether to do pairing or not
 let friends be 123
 case 1: 1 decide not to do pairing so ans  = no of ways = f(n - 1) where n be the number of friends
-case 2: 1 decide  to do pairing so ans = no of ways = as 1 can do pairing with n - 1 friends = (n - 1) * f(n - 2)
+case 2: 1 decide  to do pairing so ans = no of ways = (as 1 can do pairing with n - 1 friends) = (n - 1) * f(n - 2)
 
 //so final recurrence relation f(n) = f(n - 1) + (n - 1) * f(n - 2); 
 */
@@ -34,11 +34,14 @@ class friendsPairing{
 		}
 		char c = s.charAt(0);
 		String ros = s.substring(1);
+
+		//when pairing is not done
 		print(ros , ans + c + "-");
+
+		//when pairing is done
 		for(int i = 0 ; i < ros.length(); i++){
 			String rem = ros.substring(0 , i) + ros.substring(i + 1);
 			print(rem , ans + c + ros.charAt(i) + "-");
 		}
-
 	}
 }

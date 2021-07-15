@@ -32,18 +32,15 @@ public class noOfIslands {
       System.out.println(count);
    }
    
-   public static void drawTree(int[][] arr , int i , int j , boolean[][] visited){
-       
+   public static void drawTree(int[][] arr , int i , int j , boolean[][] visited){  
        if(i < 0 || j < 0 || i >= arr.length || j >= arr[0].length || arr[i][j] == 1 || visited[i][j]){
            return;
        }
        
        visited[i][j] = true;
-       
        drawTree(arr, i - 1, j, visited);
        drawTree(arr, i, j + 1, visited);
        drawTree(arr, i, j - 1, visited);
        drawTree(arr, i + 1, j, visited);
    } 
-
 }

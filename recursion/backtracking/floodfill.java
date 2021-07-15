@@ -1,11 +1,9 @@
 class floodfill {
     public static void main(String[] args) {
-
         int m = 4;
         int n = 3;
         int[][] arr = { { 0, 1, 1 }, { 0, 0, 1 }, { 1, 0, 0 }, { 0, 1, 0 } };
         boolean[][] visited = new boolean[m][n];
-
         printPath(0, 0, arr, visited, "");
     }
 

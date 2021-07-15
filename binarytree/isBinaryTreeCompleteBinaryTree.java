@@ -40,4 +40,29 @@ class isBinaryTreeCompleteBinaryTree{
 		}
 		return true;
 	}
+
+	//using recursion
+	public static int cnt(TreeNode root){
+		if(root == null){
+			return 0;
+		}
+		int lc = cnt(root.left);
+		int rc = cnt(root.right);
+		return lc + rc + 1;
+	}
+
+	public boolean verifyTree(TreeNode root, int idx, int n){
+		if(root == null) return true;
+
+		if(idx > n){
+			return false;
+		}
+		return verifyTree(root.left, 2 * idx, n) && verifyTree(root.right, 2 * idx + 1, n);
+	}
+	static int n;
+	//O(2  * N) space if stack space is not considered O(1) otherwise O(h) h is the height of recursion tree
+	public boolean isCompleteTree2(TreeNode root){
+		n = cnt(root);
+		return verifyTree(root, 1, n);
+	}
 }

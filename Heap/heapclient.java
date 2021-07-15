@@ -2,13 +2,11 @@ public class heapclient {
 
 	public static void main(String[] args) {
 		Heap<Integer> h = new Heap<>();
-			h.add(23);
-			h.add(85);
-			h.add(12);
-			h.add(66);
-			h.add(45);
-			h.add(15);
-			h.add(5);
+			h.add(4);
+			h.add(1);
+			h.add(9);
+			h.add(2);
+			h.add(3);
 
 		h.display();
 		// System.out.println();

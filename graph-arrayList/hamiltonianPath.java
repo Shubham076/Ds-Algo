@@ -1,3 +1,5 @@
+//hamiltonian path path in which we visites each vertex once
+//hamiltonian cycle path in which we reach the same node where we started after visiting each vertex once
 import java.io.*;
 import java.util.*;
 

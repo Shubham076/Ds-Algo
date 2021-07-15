@@ -56,9 +56,8 @@ public class breadthFirstTraversal {
             }
 
             visited[p.v] = true;
-
             System.out.println(p.v + "@" + p.psf);
-
+            
             for (Edge e : graph[p.v]) {
                 if (!visited[e.nbr]) {
                     queue.addLast(new Pair(e.nbr, p.psf + e.nbr));

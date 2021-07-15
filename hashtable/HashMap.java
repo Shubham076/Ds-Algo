@@ -44,6 +44,7 @@ class HashMap <K , V>{
 	}
 
 	private void rehash() throws Exception{
+		//ol
 		LinkedList<HMNode>[] ol = buckets;
 		initBuckets(ol.length * 2);
 
