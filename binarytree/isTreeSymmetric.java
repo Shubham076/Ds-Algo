@@ -1,3 +1,4 @@
+//a binary tree is symmetric if  both left and right subtree are mirror images of each other
 class isTreeSymmetric{
 	public boolean isSymmetric(TreeNode root) {
         return isMirror(root, root);

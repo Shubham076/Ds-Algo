@@ -1,9 +1,8 @@
 import java.util.Scanner;
 class partitionIntoSubsets{
 	public static void main(String[] args){
-		Scanner scn = new Scanner(System.in);
-		int n = scn.nextInt();  // no of subsets
-		int k = scn.nextInt();  // divison factor
+		int n = 8;  // no of subsets
+		int k = 4;  // divison factor
 
 		if(n == 0 || k == 0 || n < k){
 			return;

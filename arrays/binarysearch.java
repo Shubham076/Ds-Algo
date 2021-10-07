@@ -4,9 +4,9 @@ public class binarysearch {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner scn = new Scanner(System.in);
-		int[] arr = { 1, 5, 8, 9, 10 };
+		int[] arr = {20, 30, 38, 47, 48, 49, 51, 67, 73,75, 78,84, 89, 92, 98};
 
-		int j = scn.nextInt();
+		int j = 89;
 		int i = Binarysearch(arr, j);
 
 		if (i == 1)
@@ -21,6 +21,7 @@ public class binarysearch {
 
 		while (s <= end) {
 			int mid = (s + end) / 2;
+			System.out.println(arr[mid]);
 			if (arr[mid] == k) {
 				f = 1;
 				break;

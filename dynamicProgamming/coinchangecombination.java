@@ -7,14 +7,8 @@ public class coinchangecombination {
 
     public static void main(String[] args) throws Exception {
         Scanner scn = new Scanner(System.in);
-        int n = scn.nextInt();
-        int[] coins = new int[n];
-        
-        for(int i = 0; i < n; i++){
-            coins[i] = scn.nextInt();
-        }
-        
-        int amount = scn.nextInt();
+        int amount = 10;
+        int[] coins = {2, 3, 5};
         int[] dp = new int[amount + 1];
         dp[0] = 1;
         

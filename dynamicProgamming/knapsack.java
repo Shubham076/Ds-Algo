@@ -1,23 +1,12 @@
 import java.util.Scanner;
-
 public class knapsack {
 
     public static void main(String[] args) {
-        Scanner scn = new Scanner(System.in);
-        int n = scn.nextInt();
-        int[] wts = new int[n];
-        int[] val = new int[n];
+        int[] wts = {5, 2, 10, 8, 6};
+        int[] val = {60, 15, 30, 80, 20};
 
-        for(int i = 0; i < n; i++){
-            val[i] = scn.nextInt();
-        }
-
-        for(int i = 0; i < n; i++){
-            wts[i] = scn.nextInt();
-        }
-
-        int cap = scn.nextInt();
-        scn.close();
+        int cap = 15;
+        int n = 5;
         int[][] dp = new int[n + 1][cap + 1];
 
         for(int i = 1; i < dp.length; i++){

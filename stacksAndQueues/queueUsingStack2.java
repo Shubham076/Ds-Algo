@@ -48,12 +48,10 @@ public class queueUsingStack2 {
     }
     
     public static void main(String[] args){
-
         queueUsingStack2 q = new queueUsingStack2();
         for(int i = 1; i <= 5; i++){
             q.add(i);
         }
-
         q.display();
         System.out.println(q.peek());
         q.remove();

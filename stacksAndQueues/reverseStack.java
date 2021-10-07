@@ -7,18 +7,15 @@ class reverseStack{
         for(int i = 1; i <= 5; i++){
             s.push(i);
         }
-
         System.out.println(s.peek());
         reverse(s);
         System.out.println(s.peek());
-        
     }
 
     public static void reverse(Stack<Integer> s){
         if(s.isEmpty()){
             return;
         }
-
         int temp = s.pop();
         reverse(s);
         addAtLast(s, temp);
@@ -29,11 +26,8 @@ class reverseStack{
             s.push(data);
             return;
         }
-
         int top = s.pop();
         addAtLast(s , data);
         s.push(top);
-
     }
-
 }

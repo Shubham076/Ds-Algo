@@ -1,19 +1,7 @@
-import java.io.*;
-import java.util.*;
-
 public class minJumpsToReachTop {
-
     public static void main(String[] args) throws Exception {
-        // write your code here
-
-        Scanner scn = new Scanner(System.in);
-        int n = scn.nextInt();
-
-        int[] arr = new int[n];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = scn.nextInt();
-        }
-
+        int[] arr = {2, 3, 1, 1, 4};
+        int n = arr.length;
         Integer[] dp = new Integer[n + 1];
         dp[n] = 0;
 
@@ -30,8 +18,11 @@ public class minJumpsToReachTop {
                 dp[i] = 1 + min;
             }
         }
+        for(int i = 0; i < dp.length; i++){
+            System.out.print(dp[i] + " ");
+        }
 
-        System.out.println(dp[0]);
+        // System.out.println(dp[0]);
     }
 
 }

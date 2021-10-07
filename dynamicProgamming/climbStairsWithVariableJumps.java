@@ -21,8 +21,6 @@ public class climbStairsWithVariableJumps {
                 dp[i] += dp[i + j]; 
             }
         }
-        
         System.out.println(dp[0]);
     }
-
 }

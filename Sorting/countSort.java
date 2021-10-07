@@ -19,7 +19,7 @@ class countSort {
             farr[idx]++;
         }
 
-        // add prefix
+        // add prefix represents the last index of a particular
         for (int i = 1; i < farr.length; i++) {
             farr[i] += farr[i - 1];
         }

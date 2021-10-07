@@ -14,7 +14,7 @@ class smallestNumberFollowingPattern{
 			}
 			else{
 				s.push(num);
-				num++
+				num++;
 				while(s.size() > 0){
 					System.out.print(s.pop());
 				}

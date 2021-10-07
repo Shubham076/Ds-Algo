@@ -76,17 +76,13 @@ public class Node2Leaf {
     public static void rootToLeaf(Node root , String path){
         if(root == null)
             return;
-
+        
         if(root.left == null && root.right == null){
             System.out.println(path + root.data + " ");
             return;
         }
-
         rootToLeaf(root.left , path + root.data + " ");
-        rootToLeaf(root.right , path + root.data + " ");
-
-
-        
+        rootToLeaf(root.right , path + root.data + " ");        
     }
     public static void main(String[] args){
         Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};

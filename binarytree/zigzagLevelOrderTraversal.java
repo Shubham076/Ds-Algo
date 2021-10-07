@@ -34,7 +34,6 @@ class zigzagLevelOrderTraversal{
                 list.add(ll);
                 ll = new ArrayList<>();
                 l++;
-                
             }
         }
     }

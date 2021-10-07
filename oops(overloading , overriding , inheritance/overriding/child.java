@@ -1,10 +1,9 @@
-package stacksandqueues.overriding;
-
-public class child extends parent{
-	@Override  ///always written to check we are overiding the parent function;
-	void fun()
-	{
-		System.out.println("shubham");
-	}
-
+class child extends Parent{
+    String s = "Child";
+    static void print(){
+        System.out.println("Static of child is called" + " ");
+    }
+    void display(){
+        System.out.println("Non - static of child is called");
+    }
 }

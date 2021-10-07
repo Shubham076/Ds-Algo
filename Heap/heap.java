@@ -35,6 +35,7 @@ public class Heap <T>{
 			return;
 		}
 
+		//parent of the ith index
 		int pi = (i - 1) / 2;
 		if(isSmaller(i , pi)){
 			swap(i , pi);

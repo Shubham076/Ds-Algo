@@ -1,12 +1,12 @@
 import java.util.PriorityQueue;
-class huffmanCode{
+class huffmanCodes{
     static class Node implements Comparable<Node>{
-        int data;
+        double data;
         char c;
         Node left;
         Node right;
 
-        public Node(char c , int data , Node left , Node right){
+        public Node(char c , double data , Node left , Node right){
             this.data = data;
             this.c = c;
             this.left = left;
@@ -15,7 +15,7 @@ class huffmanCode{
 
         @Override
         public int compareTo(Node o){
-            return this.data - o.data;
+            return (int)(this.data - o.data);
         }
     }
 
@@ -33,7 +33,7 @@ class huffmanCode{
         printCodes(root.right, s + "1");
     }
 
-    public static Node generateTree(char[] arr , int[] freq){
+    public static Node generateTree(char[] arr , double[] freq){
         PriorityQueue<Node> q = new PriorityQueue<>();
         for(int i = 0; i < arr.length; i++){
             Node n = new Node(arr[i], freq[i], null, null);
@@ -50,8 +50,8 @@ class huffmanCode{
     }
 
     public static void main(String[] args){
-        char[] arr = {'a' , 'b' , 'c' , 'd' , 'e' , 'f'};
-        int[] freq = {5, 9, 12, 13, 16, 45};
+        char[] arr = {'a' , 'b' , 'c' , 'd' , 'e' , 'f', 'g'};
+        double[] freq = {0.07, 0.03, 0.09, 0.05, 0.06, 0.20, 0.30};
 
         Node root = generateTree(arr, freq);
         printCodes(root, "");   
