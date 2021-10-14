@@ -1,5 +1,9 @@
-import java.util.*;
+/*
+when we apply dfs it is seen thar for all edges u -> v u appears in the top of v in the stack
 
+*/
+
+import java.util.*;
 //finding the strongly connected components of a graph
 class kosarajuAlgo{
 	static class Edge {
@@ -71,8 +75,12 @@ class kosarajuAlgo{
     public static void main(String[] args){
     	fastReader f = new fastReader();
     	int vtces = f.nextInt();
+
+		@SuppressWarnings("unchecked")
     	ArrayList<Edge>[] graph = new ArrayList[vtces];
+		@SuppressWarnings("unchecked")
     	ArrayList<Edge>[] rgraph = new ArrayList[vtces];
+		
     	for(int i = 0; i < vtces; i++){
     		graph[i] = new ArrayList<Edge>();
     		rgraph[i] = new ArrayList<Edge>();   //reverse graph

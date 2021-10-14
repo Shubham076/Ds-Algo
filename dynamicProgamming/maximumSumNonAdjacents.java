@@ -31,10 +31,17 @@ class maximumSumNonAdjacents {
 		}
 		scn.close();
 
-
+		/*
+		maintain two sums incl and excl where incl = Max sum including the
+		previous element and excl = Max sum excluding the previous
+		element. Max sum excluding the current element will be max
+		(incl, excl) and max sum including the current element will be
+		excl + current element (Note that only excl is considered because
+		elements cannot be adjacent).
+		*/
 
 		int inc = arr[0]; //0th number included
-		int exc = 0;   //0th number not included
+		int exc = 0;     //0th number not included
 		for (int i = 1; i < arr.length; i++) {
 			int nInc = exc + arr[i];
 			int nExc = Math.max(inc , exc);

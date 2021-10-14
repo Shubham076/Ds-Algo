@@ -20,11 +20,9 @@ class smallestNumberFollowingPattern{
 				}
 			}
 		}
-
 		s.push(num);
 		while(s.size() >  0){
 			System.out.print(s.pop());
 		}
-
 	}
 }

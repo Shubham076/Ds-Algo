@@ -18,7 +18,7 @@ public class countEncodings {
 
         int[] dp = new int[s.length()];
         dp[0] = 1;
-        for (int i = 1; i < dp.length - 1 ; i++) {
+        for (int i = 1; i < dp.length; i++) {
 
             if (s.charAt(i - 1) == '0' && s.charAt(i) == '0') {
                 //eg 100 can be split into 10 - 0 and 1 -00 we dont have encoding for both 0 and 00 so not possible
@@ -41,7 +41,7 @@ public class countEncodings {
 
             else {
                 /*
-                    eg 2127  212 -7 it is valid aswe have encoding for 7
+                    eg 2127  212 -7 it is valid answer have encoding for 7
                        21- 27 27 in invalid as we have only encoding for 1-26
                        so we have have to check last 2 char are <= 26
                 */

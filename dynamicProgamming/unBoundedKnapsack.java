@@ -30,9 +30,8 @@ class unBoundedKnapSack{
                         max = tbagc;
                     }
                 }
-
-
-            } dp[bagc] = max;
+            } 
+            dp[bagc] = max;
         }
 
         System.out.println(dp[cap]);

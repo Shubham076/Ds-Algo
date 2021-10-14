@@ -33,8 +33,7 @@ class equalSubsetSum{
                     if(dp[i - 1][j]){
                         dp[i][j] = true;
                     }
-                    else{
-                        
+                    else{ 
                         if(j >= nums[i - 1]){
                             int rem = nums[i - 1];
                             if(dp[i - 1][j - rem]){

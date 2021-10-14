@@ -81,7 +81,6 @@ public class diameterOfTree {
             diaPair bp = new diaPair();
             bp.height = -1;
             bp.dia = 0;
-
             return bp;
         }
 
@@ -92,9 +91,7 @@ public class diameterOfTree {
         int val = l.height + r.height + 2;
         int dia = Math.max(val , Math.max(l.dia , r.dia));
         diaPair d = new diaPair(dia , height);
-
         return d;
-
     }
 
 

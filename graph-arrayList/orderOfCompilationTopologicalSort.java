@@ -16,6 +16,7 @@ public class orderOfCompilationTopologicalSort {
       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
       int vtces = Integer.parseInt(br.readLine());
+      @SuppressWarnings("unchecked")
       ArrayList<Edge>[] graph = new ArrayList[vtces];
       for (int i = 0; i < vtces; i++) {
          graph[i] = new ArrayList<>();

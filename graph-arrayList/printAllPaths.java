@@ -54,10 +54,6 @@ public class printAllPaths {
                 hasPath(graph , e.nbr , des , visited , psf + e.nbr);
             }
         }
-        
-        visited[src] = false;
-        
+        visited[src] = false;   
     }
-
-
 }

@@ -74,6 +74,7 @@ public class invertBinaryTree {
 
     }
 
+    //convert binay tree to its mirror tree
     public static Node invert(Node root){
         if(root == null){
             return null;

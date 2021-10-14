@@ -73,26 +73,21 @@ public class printSingleChildNodes {
 
     }
 
-    public static void printSingleChild(Node node , Node parent){
+    public static void printSingleChild(Node node){
         if(node == null)
             return;
-
-        if(parent != null && parent.left == node && parent.right == null){
-            System.out.println(parent.data);
+        if(node.left == null && node.right != null || node.left != null && node.right == null){
+            System.out.println(node.data);
         }
 
-        if(parent != null && parent.right == node && parent.left == null){
-            System.out.println(parent.data);
-        }
-
-        printSingleChild(node.left, node);
-        printSingleChild(node.right, node);        
+        printSingleChild(node.left);
+        printSingleChild(node.right);        
     }
     public static void main(String[] args){
         Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
         Node root = constructBinaryTree(arr);
         display(root);
-        // printSingleChild(root, null);
+        printSingleChild(root);
     }
 
 }

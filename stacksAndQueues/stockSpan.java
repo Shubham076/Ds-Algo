@@ -2,8 +2,8 @@ import java.util.Scanner;
 import java.util.Stack;
 class stockSpan{
 	// 7
-	// 100 80 60 70 60 75 85
-	// output 1 1 1 2 1 4 6 
+	//       100 80 60 70 60 75 85
+	// output 1   1  1  2  1  4  6 
 	public static void main(String[] args){
 		Scanner scn = new Scanner(System.in);
 		int n = scn.nextInt();

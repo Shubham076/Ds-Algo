@@ -21,7 +21,7 @@ class friendsPairing{
 		scn.close();
 		int[] dp = new int[n + 1];
 		dp[1] = 1;
-		dp[2] = 2; // 2 ways eg 12 => 1, 2 ans 12
+		dp[2] = 2; // 2 ways eg 12 => [1, 2] and [12]
 
 		for(int i = 3; i <= n; i++){
 			dp[i] = dp[i - 1] + (i - 1) * dp[i - 2];
