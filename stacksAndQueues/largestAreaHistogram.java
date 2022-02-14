@@ -11,54 +11,54 @@ class largestAreaHistogram{
 		area(arr);
 	}
 
-	public static void area(int[] arr){
-		// next smaller element index on the right
-		int[] rb = new int[arr.length];
-		// next smaller element index on the left
-		int[] lb = new int[arr.length];
-
-		Stack<Integer> s = new Stack<>();
-		s.push(arr.length - 1);
-		rb[arr.length - 1] = arr.length;
-		for(int i = arr.length - 2; i >= 0; i--){
-			while(s.size() > 0 && arr[i] <= arr[s.peek()]){
-				s.pop();
-			}
-
-			if(s.size() == 0){
-				rb[i] = arr.length;
-			}
-			else{
-				rb[i] = s.peek();
-			}
-			s.push(i);
-		}
-
-		s = new Stack<>();
-		s.push(0);
-		lb[0] = -1;
-		for(int i = 1; i < arr.length; i++){
-			while(s.size() > 0 && arr[i] <= arr[s.peek()]){
-				s.pop();
-			}
-
-			if(s.size() == 0){
-				lb[i] = -1;
-			}
-			else{
-				lb[i] = s.peek();
-			}
-			s.push(i);
-		}
-
-		int maxArea = 0;
-		for(int i = 0; i < arr.length; i++){
-			int width = rb[i] - lb[i] - 1;
-			int area  = arr[i] * width;
-			if(area > maxArea){
-				maxArea = area;
-			}
-		}
-		System.out.println(maxArea);
+	public static void area(int[] heights){
+		int n = heights.length;
+        int[] sl = new int[n];  //next smaller on the left 
+        int[] sr = new int[n];  //next smaller on the right
+        
+        sl[0] = -1;
+        sr[n - 1] = n;
+        Stack<Integer> st = new Stack<>();
+        st.push(0);
+        
+        //next smaller element on the right
+        for(int i = 1; i < heights.length; i++){
+            
+            while(st.size() > 0 && heights[i] < heights[st.peek()]){
+                int idx = st.pop();
+                sr[idx] = i;
+            }
+            
+            st.push(i);
+        }
+        
+        while(st.size() > 0){
+            int idx = st.pop();
+            sr[idx] = n;
+        }
+        
+        st = new Stack<>();
+        st.push(n - 1);
+        for(int i = n - 2; i >= 0; i--){
+            while(st.size() > 0 && heights[i] < heights[st.peek()]){
+                int idx = st.pop();
+                sl[idx] = i;
+            }
+            st.push(i);
+        }
+        
+        while(st.size() > 0){
+            int idx = st.pop();
+            sl[idx] = -1;
+        }
+        
+        int ans = 0;
+        for(int i = 0 ; i < heights.length; i++){
+            int width = sr[i] - sl[i] - 1;
+            int height = heights[i];
+            int area = height * width;
+            ans  = Math.max(area, ans);
+        }
+        return ans;
 	}
 }

@@ -33,12 +33,9 @@ public class snakeandladderboardpath {
 
 				myresult.add(dice + rr.get(i));
 				// add i to make all the path from 0 to n;
-
 			}
-
 		}
 		return myresult;
-
 	}
 
 	public static void printpath(int cur, int end, String ans) {

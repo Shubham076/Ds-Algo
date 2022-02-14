@@ -1,3 +1,4 @@
+//o(n!)
 public class nqueen {
 	public static void main(String[] args) {
 		boolean[][] board = new boolean[4][4];

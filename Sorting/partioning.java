@@ -9,14 +9,11 @@ import java.util.Scanner;
 class partioning{
 	public static void main(String[] args){
 		Scanner scn = new Scanner(System.in);
-		int n = scn.nextInt();
-		int[] arr = new int[n];
-		for(int i = 0; i < n; i++){
-			arr[i] = scn.nextInt();
-		}
+		int[] arr = {23,17,94,92,6,83,95};
+		int n = arr.length;
 
-		int pivot = scn.nextInt();
-		scn.close();
+
+		int pivot = 23;
 
 		int i = 0;
 		int j = 0;
@@ -34,8 +31,7 @@ class partioning{
 		}
 
 		for(int e : arr){
-			System.out.println(e);
+			System.out.print(e + " ");
 		}
-
 	}
 }

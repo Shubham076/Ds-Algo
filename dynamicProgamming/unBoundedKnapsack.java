@@ -1,5 +1,4 @@
 import java.util.*;
-
 class unBoundedKnapSack{
     public static void main(final String[] args) {
         final Scanner scn = new Scanner(System.in);

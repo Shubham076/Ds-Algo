@@ -1,6 +1,6 @@
 class bubbleSort {
     private static void print(int[] arr) {
-        for (int i : arr) {
+        for (int i: arr) {
             System.out.print(i + " ");
         }
     }
@@ -17,7 +17,6 @@ class bubbleSort {
                 }
             }
         }
-
         print(arr);
     }
 

@@ -60,13 +60,11 @@ public class djkistra {
       while(!q.isEmpty()){
           
           Pair rp = q.remove();
-          
           if(visited[rp.v]){
               continue;
           }
           
-          visited[rp.v] = true;
-          
+          visited[rp.v] = true;   
           System.out.println(rp.v + " via " + rp.psf + " @ " + rp.wsf);
           
           for(Edge e : graph[rp.v]){
@@ -75,7 +73,5 @@ public class djkistra {
               }
           }
       }
-      
-      
    }
 }

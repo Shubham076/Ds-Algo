@@ -1,3 +1,4 @@
+// O(n + k)
 class countSort {
     private static void print(int[] arr) {
         for (int i : arr) {

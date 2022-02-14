@@ -1,3 +1,4 @@
+//O(k * (n + b) where b is the base of decimal system 
 public class radixSort {
 
     private static void print(int[] arr) {

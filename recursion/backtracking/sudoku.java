@@ -1,3 +1,4 @@
+//O(9 ^ (n * n))
 public class sudoku {
 
 	public static void main(String[] args) {
@@ -31,14 +32,14 @@ public class sudoku {
 	}
 
 	public static boolean is_valid(int[][] board , int row , int col , int value) {
-		// checkng the rows
+		// checkng the row
 		for (int j = 0; j < board[0].length; j++) {
 			if (board[row][j] == value) {
 				return false;
 			}
 		}
 
-		// checking the columns
+		// checking the col
 		for (int i = 0; i < board.length; i++) {
 			if (board[i][col] == value) {
 				return false;

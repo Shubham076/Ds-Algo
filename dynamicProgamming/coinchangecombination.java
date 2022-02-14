@@ -17,8 +17,6 @@ public class coinchangecombination {
                 dp[j] += dp[j - coins[i]];
             }
         }
-        
         System.out.println(dp[amount]);
-
     }
 }

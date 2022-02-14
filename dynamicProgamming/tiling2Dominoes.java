@@ -18,7 +18,6 @@ class tiling2Dominoes{
 			else
 				dp[i] = dp[i - 1] + dp[i - m];
 		}
-
 		System.out.println(dp[n]);
 	}
 }

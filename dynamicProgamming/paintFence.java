@@ -1,4 +1,4 @@
-//no of of ways we can paint n fence with c colors such that atmost 2 fence have came color
+//no of of ways we can paint n fence with c colors such that atmost 2 fence have same color
 import java.util.Scanner;
 class paintFence{
 	public static void main(String[] args){

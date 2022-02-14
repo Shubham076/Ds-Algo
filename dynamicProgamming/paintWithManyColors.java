@@ -1,3 +1,4 @@
+//paint n house with k colors
 import java.util.*;
 public class paintWithManyColors {
     public static void main(String[] args) throws Exception {

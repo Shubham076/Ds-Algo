@@ -39,7 +39,6 @@ class slidingWindowMax {
                 ng[idx] = i;
                 s.pop();
             }
-
             s.push(i);
         }
 

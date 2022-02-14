@@ -57,7 +57,6 @@ public class celebrityProblem {
             }
             
         }
-        
         System.out.println(pot);
     }
 

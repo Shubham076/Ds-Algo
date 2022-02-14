@@ -24,7 +24,6 @@ class addAnyBase{
             carry = sum / base;
             p *= 10;
         }
-
         System.out.println(ans);
     }
 }
