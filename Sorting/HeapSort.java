@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class heapSort {
+public class HeapSort {
 
 	public static void swap(int i, int j, ArrayList<Integer> arr){
 		int ith = arr.get(i);

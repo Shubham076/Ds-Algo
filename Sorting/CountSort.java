@@ -1,5 +1,5 @@
 // O(n + k)
-class countSort {
+class CountSort {
     private static void print(int[] arr) {
         for (int i : arr) {
             System.out.print(i + " ");

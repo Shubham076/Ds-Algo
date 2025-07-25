@@ -1,7 +1,6 @@
-import java.io.*;
 import java.util.*;
 
-public class sort012{
+class Sort012 {
 
 // splitting areas into 4 parts
 // 0 --- j - 1 => 0 area
@@ -21,14 +20,12 @@ public class sort012{
                 swap(arr , i , j);
                 i++;
                 j++;
-                
             }
             else{
                 swap(arr, i, k);
                 k--;
             }
         }
-
     }
 
     // used for swapping ith and jth elements of array
@@ -54,5 +51,4 @@ public class sort012{
         Sort012(arr);
         print(arr);
     }
-
 }

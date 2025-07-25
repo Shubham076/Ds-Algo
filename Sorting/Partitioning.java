@@ -6,7 +6,7 @@ import java.util.Scanner;
 // j to i - 1 arr[i] > pivot
 // i to end of array unknown
 
-class partioning{
+class Partitioning {
 	public static void main(String[] args){
 		Scanner scn = new Scanner(System.in);
 		int[] arr = {23,17,94,92,6,83,95};

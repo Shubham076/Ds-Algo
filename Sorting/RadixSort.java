@@ -1,5 +1,5 @@
 //O(k * (n + b) where b is the base of decimal system 
-public class radixSort {
+public class RadixSort {
 
     private static void print(int[] arr) {
         for (int i : arr) {
@@ -21,7 +21,6 @@ public class radixSort {
             countSort(arr, e);
             e *= 10;
         }
-
         print(arr);
     }
 

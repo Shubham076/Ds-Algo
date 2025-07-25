@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class quickSort {
+public class QuickSort {
 
     private static void print(int[] arr) {
         for (int i : arr) {
@@ -23,7 +23,7 @@ public class quickSort {
         }
 
         int pivot = arr[hi];
-        int pi = partioning(arr, pivot);
+        int pi = partition(arr, pivot);
         quick(arr, lo, pi - 1);
         quick(arr, pi + 1, hi);
         for (int e : arr) {
@@ -32,7 +32,11 @@ public class quickSort {
         System.out.println();
     }
 
-    public static int partioning(int[] arr, int pivot) {
+// splitting areas into 4 parts
+// 0 --- j - 1 => <= pivot
+// j -- i - 1 => > pivot
+// i --- n(end of array) == unknown
+    public static int partition(int[] arr, int pivot) {
         int i = 0;
         int j = 0;
         while (i < arr.length) {
@@ -46,7 +50,6 @@ public class quickSort {
                 j++;
             }
         }
-
         return j - 1;
     }
 }

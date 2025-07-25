@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class sort01 {
+public class Sort01 {
     public static void main(String args[])throws Exception {
         Scanner scn = new Scanner(System.in);
         int n = scn.nextInt();
@@ -14,9 +14,12 @@ public class sort01 {
         for (int i : arr) {
             System.out.print(i + " ");
         }
-
     }
 
+// splitting areas into 4 parts
+// 0 --- j - 1 => 0 area
+// j -- i - 1 => 1 area
+// i --- n(end of array) == unknown
     public static void sort(int[] arr) {
         //write your code here
         int i = 0 , j = 0;
@@ -31,7 +34,6 @@ public class sort01 {
                 j++;
             }
         }
-
     }
 }
 
