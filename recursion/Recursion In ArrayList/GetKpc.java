@@ -8,8 +8,6 @@ public class GetKpc {
         Scanner scn = new Scanner(System.in);
         String s = scn.next();
         System.out.println(getKPC(s));
-
-
     }
 
     public static ArrayList<String> getKPC(String s) {
@@ -20,7 +18,6 @@ public class GetKpc {
         }
         
         String S = arr[s.charAt(0) - '0'];
-        
         ArrayList<String> rr = getKPC(s.substring(1));
         ArrayList<String> mr = new ArrayList<>();
         
@@ -34,7 +31,6 @@ public class GetKpc {
     }
 
     public static void printKPC(String s , String ans) {
-        
         if(s.length() == 0){
             System.out.println(ans);
             return;

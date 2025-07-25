@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class Permutations {
 	public static void main(String[] args) {
-		String a = "aabc";
+		String a = "abc";
 		System.out.println(getPermutation(a));
 		printPermutations(a, "");
 	}
@@ -19,10 +19,9 @@ public class Permutations {
 		ArrayList<String> myResult = new ArrayList<>();
 		ArrayList<String> recResult = getPermutation(ros); //// recResult is recursion result;
 
-		for (int i = 0; i < recResult.size(); i++){
-			String rrs = recResult.get(i);
-			for (int j = 0; j <= rrs.length(); j++) {
-				String a = rrs.substring(0, j) + cc + rrs.substring(j);
+		for (String s: recResult){
+			for (int j = 0; j <= s.length(); j++) {
+				String a = s.substring(0, j) + cc + s.substring(j);
 				myResult.add(a);
 			}
 		}

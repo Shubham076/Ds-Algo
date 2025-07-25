@@ -6,7 +6,7 @@ public class GetMazePath {
 		System.out.println();
 		getMazePath(0, 0, 2, 2, "");
 		System.out.println();
-		System.out.println(countmazepath(0, 0, 2, 2));
+		System.out.println(countMazePath(0, 0, 2, 2));
 	}
 	public static ArrayList<String> getMazePath(int sr, int sc, int er, int ec) { ///sr=start row er end row
 		if (sr == er && sc == ec) {
@@ -46,23 +46,14 @@ public class GetMazePath {
 		getMazePath(sr + 1, sc, er, ec, ans + "V");
 	}
 
-	public static int countmazepath(int sr, int sc, int er, int ec) {
-		if (sr == er && sc == ec) {
+	public static int countMazePath(int sr, int sc, int er, int ec) {
+		if (sr == er && sc == ec) return 1;
+		if (sr > er || sc > ec) return 0;
 
-			return 1;
-		}
-
-
-		if (sr > er || sc > ec)
-			return 0;
 		int ch = 0, cv = 0;
-		// horizontal movement
-		ch = countmazepath(sr, sc + 1, er, ec);
-
-		// vertical movement
-		cv = countmazepath(sr + 1, sc, er, ec);
-
-		int p = ch + cv;
-		return p;
+		// horizontal and vertical movement
+		int hc = countMazePath(sr, sc + 1, er, ec);
+		int vc = countMazePath(sr + 1, sc, er, ec);
+		return hc + vc;
 	}
 }
