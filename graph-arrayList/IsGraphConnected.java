@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class connectedComps {
+public class IsGraphConnected {
    static class Edge {
       int src;
       int nbr;
@@ -44,8 +44,11 @@ public class connectedComps {
           }
           
       }
+      
+       
       // write your code here
-      System.out.println(comps);
+
+      System.out.println(comps.size() == 1);
    }
    
    public static void generateComps(ArrayList<Edge>[] graph , int src , boolean[] visited , ArrayList<Integer> comp){

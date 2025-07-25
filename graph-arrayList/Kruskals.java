@@ -1,5 +1,5 @@
 import java.util.*;
-class kruskals{
+class Kruskals {
 	static class Pair implements Comparable<Pair>{
 		int first;
 		int second;

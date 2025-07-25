@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
-// find the shortest path in terms of weights
-public class djkistra {
+
+public class ConnectedComps {
    static class Edge {
       int src;
       int nbr;
@@ -12,23 +12,6 @@ public class djkistra {
          this.nbr = nbr;
          this.wt = wt;
       }
-   }
-   
-   static class Pair implements Comparable<Pair>{
-       int v;
-       String psf;
-       int wsf;
-       
-       public Pair(int v , String psf , int wsf){
-           this.v = v;
-           this.psf = psf;
-           this.wsf = wsf;
-       }
-       
-       public int compareTo(Pair o){
-           return this.wsf - o.wsf;
-       }
-       
    }
 
    public static void main(String[] args) throws Exception {
@@ -50,28 +33,28 @@ public class djkistra {
          graph[v2].add(new Edge(v2, v1, wt));
       }
 
-      int src = Integer.parseInt(br.readLine());
-      // write your code here
-      
+      ArrayList<ArrayList<Integer>> comps = new ArrayList<>();
       boolean[] visited = new boolean[vtces];
-      PriorityQueue<Pair> q = new PriorityQueue<>();
-      q.add(new Pair(src, src + "" , 0));
       
-      while(!q.isEmpty()){
-          
-          Pair rp = q.remove();
-          if(visited[rp.v]){
-              continue;
+      for(int i = 0; i < vtces; i++){
+          if(!visited[i]){
+              ArrayList<Integer> comp = new ArrayList<>();
+                generateComps(graph , i , visited , comp); 
+                comps.add(comp);
           }
           
-          visited[rp.v] = true;   
-          System.out.println(rp.v + " via " + rp.psf + " @ " + rp.wsf);
-          
-          for(Edge e : graph[rp.v]){
-              if(!visited[e.nbr]){
-                  q.add(new Pair(e.nbr , rp.psf + e.nbr , rp.wsf + e.wt));
-              }
-          }
       }
+      // write your code here
+      System.out.println(comps);
+   }
+   
+   public static void generateComps(ArrayList<Edge>[] graph , int src , boolean[] visited , ArrayList<Integer> comp){
+       visited[src] = true;
+       comp.add(src);
+       for(Edge e : graph[src]){
+           if(!visited[e.nbr]){
+               generateComps(graph , e.nbr , visited , comp);
+           }
+       }
    }
 }

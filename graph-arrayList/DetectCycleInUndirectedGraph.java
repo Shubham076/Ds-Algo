@@ -1,5 +1,5 @@
 import java.util.*;
-class detectCycleInUndirectedGraph{
+class DetectCycleInUndirectedGraph {
 	static class Pair{
 		int first;
 		int second;

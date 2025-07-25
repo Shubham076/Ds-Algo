@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class printAllPaths {
+public class IsCyclic {
    static class Edge {
       int src;
       int nbr;
@@ -14,6 +14,7 @@ public class printAllPaths {
       }
    }
 
+// cycle detectio in undirected graph;
    public static void main(String[] args) throws Exception {
       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -33,27 +34,42 @@ public class printAllPaths {
          graph[v2].add(new Edge(v2, v1, wt));
       }
 
-      int src = Integer.parseInt(br.readLine());
-      int dest = Integer.parseInt(br.readLine());
-
-      // write all your codes here
-      
       boolean[] visited = new boolean[vtces];
-      hasPath(graph , src , dest , visited , "");
+      for(int v = 0; v < vtces; v++){
+         if(visited[v] == false){
+            boolean cyclic = IsCyclic(graph, v, visited);
+            if(cyclic){
+               System.out.println(true);
+               return;
+            }     
+         }
+      }
+
+      System.out.println(false);
    }
-   
-    public static void hasPath(ArrayList<Edge>[] graph , int src , int des , boolean[] visited ,String psf){
-        if(src == des){
-            System.out.println(psf);
-            return;
-        }
-        
-        visited[src] = true;
-        for(Edge e : graph[src]){
-            if(!visited[e.nbr]){
-                hasPath(graph , e.nbr , des , visited , psf + e.nbr);
+
+   public static boolean IsCyclic(ArrayList<Edge>[] graph, int src, boolean[] visited) {
+      Queue<Integer> queue = new ArrayDeque<>();
+      queue.add(src);
+      while(queue.size() > 0){
+         int rem = queue.remove();
+
+         if(visited[rem]){
+            return true;
+         }
+         visited[rem] = true;
+         
+         for (Edge e : graph[rem]) {
+            if (!visited[e.nbr]) {
+               queue.add(e.nbr);
             }
-        }
-        visited[src] = false;   
-    }
+         }
+      }
+
+      return false;
+   }
+
 }
+
+
+                        

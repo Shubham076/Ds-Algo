@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class orderOfCompilationTopologicalSort {
+public class OrderOfCompilationTopologicalSort {
    static class Edge {
       int src;
       int nbr;

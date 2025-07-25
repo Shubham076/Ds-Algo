@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class fastReader{
+public class fastReader {
         BufferedReader br;
         StringTokenizer st;
 

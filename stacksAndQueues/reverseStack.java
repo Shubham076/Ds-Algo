@@ -1,33 +1,25 @@
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.Stack;
 
 // time complexity  O(N2) and space complexity O(N)
 class reverseStack{
     public static void main(String[] args){
-        Stack<Integer> s = new Stack<>();
+        Stack<Integer> st = new Stack<>();
+        Queue<Integer> queue = new ArrayDeque<>();
         for(int i = 1; i <= 5; i++){
-            s.push(i);
+            st.push(i);
         }
-        System.out.println(s.peek());
-        reverse(s);
-        System.out.println(s.peek());
-    }
+        System.out.println(st);
+        // move all the elements from stack to auxilary stack
+        while (st.size() > 0) {
+            queue.add(st.pop());
+        }
 
-    public static void reverse(Stack<Integer> s){
-        if(s.isEmpty()){
-            return;
+        // move back
+        while (queue.size() > 0) {
+            st.push(queue.remove());
         }
-        int temp = s.pop();
-        reverse(s);
-        addAtLast(s, temp);
-    }
-
-    public static void addAtLast(Stack<Integer> s , int data){
-        if(s.isEmpty()){
-            s.push(data);
-            return;
-        }
-        int top = s.pop();
-        addAtLast(s , data);
-        s.push(top);
+        System.out.println(st);
     }
 }

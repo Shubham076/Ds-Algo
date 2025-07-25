@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 //spread of infection problem
-public class levelOrderTraversalOfGraph {
+public class LevelOrderTraversalOfGraph {
 	static class Edge {
 		int src;
 		int nbr;

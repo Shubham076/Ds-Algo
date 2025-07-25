@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class multisolver {
+public class MultiSolverGraph {
    static class Edge {
       int src;
       int nbr;

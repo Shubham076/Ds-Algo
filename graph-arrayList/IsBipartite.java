@@ -10,7 +10,7 @@ we can find using bfs
 import java.io.*;
 import java.util.*;
 
-public class isBipartite {
+public class IsBipartite {
     static class Edge {
         int src;
         int nbr;

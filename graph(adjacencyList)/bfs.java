@@ -3,7 +3,7 @@ import java.util.HashSet;
 import java.util.HashMap;
 import java.util.Queue;
 import java.util.ArrayDeque;
-public class bfs extends FastReader{
+public class bfs extends fastReader {
 
     static class Edge{
         String nbr;
@@ -48,7 +48,7 @@ public class bfs extends FastReader{
     }
 
     public static void main(String[] args){
-        FastReader f = new FastReader();
+        fastReader f = new fastReader();
         int e = f.nextInt();
         HashMap<String , ArrayList<Edge>> graph = new HashMap<>();
 

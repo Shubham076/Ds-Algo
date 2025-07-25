@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-class Reader extends FastReader{
+class Reader extends fastReader {
 
     
     static class Edge{
@@ -39,7 +39,7 @@ class Reader extends FastReader{
 
     public static void main(String[] args){
         // long start = System.nanoTime();
-        FastReader f = new FastReader();
+        fastReader f = new fastReader();
         int e = f.nextInt();
         HashMap<String , ArrayList<Edge>> graph = new HashMap<>();
 

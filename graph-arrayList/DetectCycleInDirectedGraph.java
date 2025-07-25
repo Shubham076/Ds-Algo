@@ -1,5 +1,5 @@
 import java.util.*;
-class detectCycleInDirectedGraph{
+class DetectCycleInDirectedGraph {
 	static class Edge {
         int src;
         int nbr;

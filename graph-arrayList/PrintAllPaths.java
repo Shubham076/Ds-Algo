@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class isGraphConnected {
+public class PrintAllPaths {
    static class Edge {
       int src;
       int nbr;
@@ -33,31 +33,27 @@ public class isGraphConnected {
          graph[v2].add(new Edge(v2, v1, wt));
       }
 
-      ArrayList<ArrayList<Integer>> comps = new ArrayList<>();
-      boolean[] visited = new boolean[vtces];
-      
-      for(int i = 0; i < vtces; i++){
-          if(!visited[i]){
-              ArrayList<Integer> comp = new ArrayList<>();
-                generateComps(graph , i , visited , comp); 
-                comps.add(comp);
-          }
-          
-      }
-      
-       
-      // write your code here
+      int src = Integer.parseInt(br.readLine());
+      int dest = Integer.parseInt(br.readLine());
 
-      System.out.println(comps.size() == 1);
+      // write all your codes here
+      
+      boolean[] visited = new boolean[vtces];
+      hasPath(graph , src , dest , visited , "");
    }
    
-   public static void generateComps(ArrayList<Edge>[] graph , int src , boolean[] visited , ArrayList<Integer> comp){
-       visited[src] = true;
-       comp.add(src);
-       for(Edge e : graph[src]){
-           if(!visited[e.nbr]){
-               generateComps(graph , e.nbr , visited , comp);
-           }
-       }
-   }
+    public static void hasPath(ArrayList<Edge>[] graph , int src , int des , boolean[] visited ,String psf){
+        if(src == des){
+            System.out.println(psf);
+            return;
+        }
+        
+        visited[src] = true;
+        for(Edge e : graph[src]){
+            if(!visited[e.nbr]){
+                hasPath(graph , e.nbr , des , visited , psf + e.nbr);
+            }
+        }
+        visited[src] = false;   
+    }
 }

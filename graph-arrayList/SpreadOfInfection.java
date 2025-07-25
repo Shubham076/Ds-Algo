@@ -9,7 +9,7 @@
 import java.io.*;
 import java.util.*;
 
-public class spreadOfInfection {
+public class SpreadOfInfection {
    static class Edge {
       int src;
       int nbr;
