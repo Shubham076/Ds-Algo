@@ -1,4 +1,6 @@
 import java.util.*;
+import java.util.HashMap;
+
 // leetcode 128
 class longestConsecutiveSequence{
 	public static void main(String[] args){
@@ -26,30 +28,20 @@ class longestConsecutiveSequence{
 	}
 
 	// with single iteration
-	public int max(int[] arr) throws Exception {
-		int max = 0;
+	public int max(int[] nums) throws Exception {
 		HashMap<Integer, Integer> map = new HashMap<>();
-		for(int i = 0; i < arr.length; i++){
-			int n = arr[i];
+		int max = 0;
+		for (int n: nums) {
+			if (!map.containsKey(n)) {
+				int left = map.getOrDefault(n - 1, 0);
+				int right = map.getOrDefault(n + 1, 0);
+				int length = left + right + 1;
+				max = Math.max(max, length);
+				map.put(n, length);
 
-			if(!map.containsKey(n)){
-				int sp = n;
-				int ep = n;
-				if(map.containsKey(n - 1)){
-					sp = sp - map.get(n - 1);
-				}
-				if(map.containsKey(n + 1)){
-					ep = ep + map.get(n + 1);
-				}
-
-				if(sp != n && ep != n){
-					map.put(n, 1);
-				}
-
-				int len = ep - sp + 1;
-				map.put(sp, len);
-				map.put(ep , len);
-				max = Math.max(len, max);
+				// expand the boundaries
+				map.put(n - left, length);
+				map.put(n + right, length);
 			}
 		}
 		return max;

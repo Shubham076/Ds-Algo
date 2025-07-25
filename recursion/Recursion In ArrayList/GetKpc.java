@@ -1,7 +1,6 @@
-import java.io.*;
 import java.util.*;
 
-public class getKPC {
+public class GetKpc {
 
     static String[] arr = {".;" , "abc" , "def" , "ghi" , "jkl" , "mno" , "pqrs" , "tu" , "vwx" , "yz"};
 

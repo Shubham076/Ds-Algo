@@ -1,4 +1,4 @@
-public class maxOfArray {
+public class MaxOfArray {
     public static void main(String[] args) {
         int[] arr = {1, 1, 1, 1, 1};
         System.out.println(max(arr , 0));
@@ -10,7 +10,6 @@ public class maxOfArray {
         }
         // faith
         int maxRest = max(arr , index + 1);
-        int maximum = Math.max(arr[index] , maxRest);
-        return maximum;
+        return Math.max(arr[index] , maxRest);
     }
 }

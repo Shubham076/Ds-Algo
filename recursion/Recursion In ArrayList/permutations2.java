@@ -5,12 +5,12 @@ public class permutations2 {
     }
 
     public static void printPermutations(char[] arr , int l , int r){
-        if(l == r){
+        if (l == r) {
             printArray(arr);
             return;
         }
 
-        for(int i = l; i <= r; i++){
+        for (int i = l; i <= r; i++) {
             swap(arr, i, l);
             printPermutations(arr, l + 1, r);
             swap(arr, i, l);
@@ -29,5 +29,4 @@ public class permutations2 {
         }
         System.out.println();
     }
-    
 }

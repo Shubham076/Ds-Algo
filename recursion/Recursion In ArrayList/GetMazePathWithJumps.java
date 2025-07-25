@@ -1,4 +1,4 @@
-public class getMazePathWithJumps {
+public class GetMazePathWithJumps {
     // here we can take the max H jump of difference betwenn start and the end colmn
     // H1 = one step H2 = twosteps and so on
     // similarly for v and  D also

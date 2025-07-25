@@ -12,7 +12,7 @@ public class nqueen {
 
 		int cnt = 0;
 		for (int col = 0; col < board[row].length; col++) {
-			if (issafe(board, row, col)) {
+			if (isSafe(board, row, col)) {
 				board[row][col] = true;
 				cnt = cnt + countnqueens(board, row + 1);
 				board[row][col] = false;
@@ -21,7 +21,7 @@ public class nqueen {
 		return cnt;
 	}
 
-	public static boolean issafe(boolean[][] board, int row, int col) {
+	public static boolean isSafe(boolean[][] board, int row, int col) {
 		for (int i = row; i >= 0; i--) {
 			if (board[i][col]){
 				return false;

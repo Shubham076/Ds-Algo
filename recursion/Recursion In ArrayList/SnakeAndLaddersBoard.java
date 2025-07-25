@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class snakeandladderboardpath {
+public class SnakeAndLaddersBoard {
 //calculate all the possiblw ways to get number 10 by throwing dice;
 	public static void main(String[] args) {
 		System.out.print(getpath(0, 6));

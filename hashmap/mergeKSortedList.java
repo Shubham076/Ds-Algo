@@ -24,7 +24,6 @@ public class mergeKSortedList {
 
         public int compareTo(Pair o){
             return this.v - o.v;
-
         }
     }
     public static void main(String[] args){

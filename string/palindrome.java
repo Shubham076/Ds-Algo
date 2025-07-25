@@ -1,11 +1,9 @@
 public class palindrome {
 	public static void main(String[] args) {
-
 		String s = "NAMAN";
 		String p = "Shubham";
 		System.out.println(Palindrome(s));
 		System.out.println(Palindrome(p));
-
 	}
 
 	public static boolean Palindrome(String s) {
@@ -17,9 +15,6 @@ public class palindrome {
 			start++;
 			end--;
 		}
-
 		return true;
-	
-
-}
+	}
 }
