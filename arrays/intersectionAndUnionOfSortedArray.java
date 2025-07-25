@@ -8,14 +8,14 @@ class intersectionAndUnionOfSortedArray{
 		int[] arr2 = new int[m];
 
 		for(int i = 0; i < n; i++){
-			arr1[i] = sn.nextInt();
+			arr1[i] = scn.nextInt();
 		}
 
 		for(int i = 0; i < m; i++){
 			arr2[i] = scn.nextInt();
 		}
 
-		unin(arr1 , arr2);
+		union(arr1 , arr2);
 		intersection(arr1 , arr2);	
 	}
 
@@ -29,7 +29,7 @@ class intersectionAndUnionOfSortedArray{
 					list.add(arr1[i]);
 				}
 				else if(list.size() == 0){
-					list.ad(arr1[i]);
+					list.add(arr1[i]);
 				}
 				i++;
 				j++;
