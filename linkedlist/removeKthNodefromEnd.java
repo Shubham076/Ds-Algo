@@ -1,10 +1,14 @@
 import java.util.*;
 class removeKthNodefromEnd {
+	static class ListNode {
+		ListNode next;
+
+	}
 	public ListNode removeNthFromEnd(ListNode head, int n) {
 		ListNode slow = head, fast = head;
 
 		//Move fast in front so that the gap between slow and fast becomes n
-		for (int i = 0; i < n; i++)   {
+		for (int i = 0; i < n; i++) {
 			fast = fast.next;
 		}
 
@@ -20,3 +24,4 @@ class removeKthNodefromEnd {
 		slow.next = slow.next.next;
 		return head;
 	}
+}

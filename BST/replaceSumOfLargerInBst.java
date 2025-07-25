@@ -59,7 +59,7 @@ class replaceSumOfLargerInBst{
 		display(root);
 
 		System.out.println();
-		replaceLargerw(root, 0);
+		replaceLarger(root);
 		display(root);
 	}
 }

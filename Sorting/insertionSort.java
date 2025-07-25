@@ -1,4 +1,5 @@
-*+import java.util.Scanner;
+import java.util.Scanner;
+
 public class insertionSort {
 
     public static void main(String[] args) {
@@ -29,7 +30,6 @@ public class insertionSort {
                 }
             }
         }
-
     }
 
     public static void swap(int[] arr , int i , int j) {
@@ -37,6 +37,4 @@ public class insertionSort {
         arr[j] = arr[j + 1];
         arr[j + 1] = temp;
     }
-
-
 }

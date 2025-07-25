@@ -1,5 +1,5 @@
 import java.util.*;
-public class isTreeSymmetric {
+class IsGenericTreeSymmetric {
     static class Node{
         int data;
         ArrayList<Node> children = new ArrayList<>();

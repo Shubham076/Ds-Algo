@@ -29,7 +29,7 @@ class reflectMatrix{
 		printMatrix(a);
 	}
 
-	public static void relfectSec(int[][] arr){
+	public static void reflectSec(int[][] arr){
 		System.out.println("Reflect about secondary diagonal");
 		int[][] a = new int[arr.length][arr.length];
 		for(int i = 0; i < a.length; i++){
@@ -54,7 +54,6 @@ class reflectMatrix{
 		System.out.println();
 		relfectMain(arr);
 		System.out.println();
-		relfectSec(arr);
-
+		reflectSec(arr);
 	}
 }

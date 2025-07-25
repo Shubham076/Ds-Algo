@@ -1,10 +1,6 @@
-import java.io.IOException;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
 import java.util.ArrayList;
 import java.util.HashMap;
-public class Main extends FastReader{
+class Reader extends FastReader{
 
     
     static class Edge{

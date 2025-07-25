@@ -4,7 +4,7 @@ import java.util.ArrayList;
 // if it is +ve means this is greater
 // if it is 0 mean both are equal
 // if it is -ve means this is smaller 
-public class Heap <T>{
+class Heap <T>{
 	private ArrayList<T> data;
 
 	public Heap(){

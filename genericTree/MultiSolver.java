@@ -1,5 +1,5 @@
 import java.util.*;
-class multisolver{
+class MultiSolver{
 
     static int size;
     static int min;

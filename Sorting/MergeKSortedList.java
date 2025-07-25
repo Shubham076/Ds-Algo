@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
-public class mergeKSortedList {
+class MergeKSortedList {
 
     static class Pair implements Comparable<Pair> {
         int li;     // list index

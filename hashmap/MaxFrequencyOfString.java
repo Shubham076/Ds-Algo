@@ -1,13 +1,15 @@
-import java.util.*;
-public class maxFreqofSTR {
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
-	public static void main(String[] args) {
+class MaxFrequencyOfString {
+	public static void main(String[] args) throws Exception {
 		Scanner scn = new Scanner(System.in);
 		String str = scn.next();
-		System.out.println(maxFreq(str));
+		System.out.println(maxFrequency(str));
 	}
-	public static char maxFreq(String str) {
-		HashMap<Character, Integer> map = new HashMap<>();
+	public static char maxFrequency(String str) throws Exception {
+		Map<Character, Integer> map = new HashMap<>();
 		for (int i = 0; i < str.length(); i++) {
 			char cc = str.charAt(i);
 			if (map.containsKey(cc)) {
@@ -23,7 +25,7 @@ public class maxFreqofSTR {
 
 		char maxchar = '\0';
 		int max = 0;
-		for (HashMap.Entry<Character, Integer> entry : map.entrySet()) {
+		for (Map.Entry<Character, Integer> entry : map.entrySet()) {
 			if (entry.getValue() > max) {
 				max = entry.getValue();
 				maxchar = entry.getKey();

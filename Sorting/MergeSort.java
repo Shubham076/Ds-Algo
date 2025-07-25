@@ -1,4 +1,4 @@
-public class mergeSort {
+class MergeSort {
     private static void print(int[] arr) {
         for(int i : arr){
             System.out.print(i+" ");

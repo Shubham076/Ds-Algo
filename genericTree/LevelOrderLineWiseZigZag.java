@@ -10,7 +10,7 @@ public class LevelOrderLineWiseZigZag {
 
     }
 
-    static void LevelOrder(Node root) {
+    static void LevelOrder(Node node) {
       Stack<Node> stack = new Stack<>();
       stack.add(node);
       Stack<Node> cstack = new Stack<>();

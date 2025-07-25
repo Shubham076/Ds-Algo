@@ -11,7 +11,7 @@ class largestAreaHistogram{
 		area(arr);
 	}
 
-	public static void area(int[] heights){
+	public static int area(int[] heights){
 		int n = heights.length;
         int[] sl = new int[n];  //next smaller on the left 
         int[] sr = new int[n];  //next smaller on the right

@@ -1,5 +1,11 @@
+/*
+leetcode 543
+The diameter of a binary tree is the length of the longest path
+between any two nodes in a tree. This path may or may not pass through the
+root.
+*/
 import java.util.*;
-public class nodeToRootPath {
+class DiameterOfTree {
     static class Node{
         int data;
          Node left = null;
@@ -58,14 +64,59 @@ public class nodeToRootPath {
         return root;
     }
 
+    static class diaPair{
+        int dia;
+        int height;
+
+        public diaPair(){}
+        
+        public diaPair(int dia , int height){
+            this.dia = dia;
+            this.height = height;
+        }
+    }
+
+    public static diaPair diameter(Node root){
+        if(root == null){
+            diaPair bp = new diaPair();
+            bp.height = -1;
+            bp.dia = 0;
+            return bp;
+        }
+
+        diaPair l = diameter(root.left);
+        diaPair r = diameter(root.right);
+
+        int height = Math.max(l.height , r.height) + 1;
+        int val = l.height + r.height + 2;
+        int dia = Math.max(val , Math.max(l.dia , r.dia));
+        diaPair d = new diaPair(dia , height);
+        return d;
+    }
+
+
+    //method2 O(N)
+    static int d;
+    public static int height(Node root){
+        if(root == null) return -1;
+
+        int lh = height(root.left);
+        int rh = height(root.right);
+
+        if(lh + rh + 2 > d){
+            d = lh + rh + 2;
+        }
+        return Math.max(lh, rh) + 1;
+    }
+
     public static void display(Node root){
 
         if(root == null)
             return;
         String str = "";
         str += root.left != null ? root.left.data + " " : ". ";
-        str += "<-- "+root.data+" -->";
-        str += root.right != null ? " "+root.right.data: " .";
+        str += "<-- " + root.data + " -->";
+        str += root.right != null ? " " + root.right.data :  " .";
         System.out.println(str);
 
 
@@ -73,37 +124,16 @@ public class nodeToRootPath {
         display(root.right);
 
     }
-
-    public static ArrayList<Integer> node2Root(Node root , int data){
-        if(root == null)
-            return new ArrayList<>();
-        
-        if(root.data == data){
-            ArrayList<Integer> ans = new ArrayList<>();
-            ans.add(root.data);
-            return ans;
-        }
-
-        ArrayList<Integer> l = node2Root(root.left, data);
-        if(l.size() > 0){
-            l.add(root.data);
-            return l;
-        }
-
-        ArrayList<Integer> r = node2Root(root.right, data);
-        if(r.size() > 0){
-            r.add(root.data);
-            return r;
-        }
-
-        return new ArrayList<>();
-    }
     public static void main(String[] args){
         Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
         Node root = constructBinaryTree(arr);
-        // display(root);
-        System.out.println(node2Root(root, 70));
+        d = 0;
+        System.out.print("Method1: ");
+        diaPair dp = diameter(root);
+        System.out.println(dp.dia);
 
+        System.out.print("Method2: ");
+        height(root);
+        System.out.println(d);
     }
-
 }

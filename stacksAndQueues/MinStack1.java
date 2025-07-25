@@ -1,11 +1,11 @@
 import java.io.*;
 import java.util.*;
 
-class MinStack {
+class MinStack1 {
     Stack<Integer> allData;
     Stack<Integer> minData;
 
-    public MinStack() {
+    public MinStack1() {
         allData = new Stack<>();
         minData = new Stack<>();
     }
@@ -54,7 +54,7 @@ class MinStack {
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        MinStack st = new MinStack();
+        MinStack1 st = new MinStack1();
 
         String str = br.readLine();
         while (str.equals("quit") == false) {

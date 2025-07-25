@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Stack;
+
 class maxFrequencyStack {
 
 	HashMap<Integer, Stack<Integer>> map;

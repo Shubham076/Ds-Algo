@@ -27,22 +27,16 @@ public class subtract2arrays {
         int d1 = arr2[j--] + carry;
         int d2 = i >= 0  ? arr1[i] : 0;
         int diff = 0;
-        
         if(d1 >= d2){
             diff = d1 - d2;
             carry = 0;
         }
-        else{
+        else {
             carry = -1;
             diff = d1 + 10 - d2;
         }
-            
-        
         ans[k--] = diff;
         i--;
-
-        
-        
     }
     
     int x = 0;
@@ -56,8 +50,5 @@ public class subtract2arrays {
     while(x < ans.length){
         System.out.println(ans[x++]);
     }
-    
-    
-
  }
 }

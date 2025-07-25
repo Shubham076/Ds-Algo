@@ -53,11 +53,8 @@ public class spiralprint {
 						cnt--;
 					}
 				}
-			
 			left++;
 			dir = 1;
 		}
-
 	}
-
 }

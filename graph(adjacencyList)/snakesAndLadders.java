@@ -1,4 +1,8 @@
-class Solution {    
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Queue;
+
+class Solution {
     static class Pair{
         int v;
         int count;

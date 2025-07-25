@@ -2,7 +2,7 @@
 // ceil smallest among larger
 // floor largest among smaller
 import java.util.*;
-public class ceilAndFloor {
+class CeilAndFloor {
     static int ceil; 
     static int floor ;
 

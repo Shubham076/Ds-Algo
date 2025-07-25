@@ -64,7 +64,7 @@ public class segmentTree {
 			this.display(node.left);
 		}
 
-		if (node.right ! = null) {
+		if (node.right != null) {
 			this.display(node.right);
 		}
 	}
