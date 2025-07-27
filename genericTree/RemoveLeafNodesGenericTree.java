@@ -1,12 +1,9 @@
 import java.util.*;
 
-public class RemoveLeafNodes {
-    
-
+public class RemoveLeafNodesGenericTree {
         static class Node{
             int data;
             ArrayList<Node> children = new ArrayList<>();
-    
             public Node(int data){
                 this.data = data;
             }

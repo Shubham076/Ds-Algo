@@ -5,7 +5,6 @@ public class sizeOfTree {
     static class Node{
         int data;
         ArrayList<Node> children = new ArrayList<>();
-
         public Node(int data){
             this.data = data;
         }
@@ -16,12 +15,10 @@ public class sizeOfTree {
        for(Node child : root.children){
            s += size(child);
        }
-
        s += 1;
        return s;
     }
     public static void main(String[] args) {
-
         int[] arr = {10, 20, -1, 30, 50, -1, 60, -1, -1, 40, -1, -1};
         Node root = null;
         Stack<Node> s = new Stack<>();
@@ -39,12 +36,9 @@ public class sizeOfTree {
                 else{
                     root = n;
                 }
-
                 s.push(n);
             }
         }
-
         System.out.println(size(root));
-
     }
 }

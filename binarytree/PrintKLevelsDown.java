@@ -1,5 +1,5 @@
 import java.util.*;
-public class removeLeaves {
+public class PrintKLevelsDown {
     static class Node{
         int data;
          Node left = null;
@@ -67,33 +67,25 @@ public class removeLeaves {
         str += "<-- " + root.data + " -->";
         str += root.right != null ? " " + root.right.data :  " .";
         System.out.println(str);
-
-
         display(root.left);
         display(root.right);
-
     }
 
-    public static Node removeLeafNodes(Node root){
-        if(root == null){
-            return root;
-        }
+    public static void printKLevels(Node root , int  k){
+        if(root == null || k < 0)
+            return;
 
-        if(root.left == null && root.right == null){
-            return null;
-        }
-        root.left = removeLeafNodes(root.left);   //new left root
-        root.right = removeLeafNodes(root.right);   // new right root
+        if(k == 0)
+            System.out.println(root.data);
         
-        return root;
+        printKLevels(root.left , k  - 1);
+        printKLevels(root.right , k  - 1);
     }
     public static void main(String[] args){
         Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
         Node root = constructBinaryTree(arr);
         display(root);
-        removeLeafNodes(root);
-        System.out.println();
-        display(root);
+        printKLevels(root , 2);
     }
 
 }

@@ -1,5 +1,6 @@
 import java.util.*;
-public class printKLevelsFar {
+
+class RemoveLeafNodes {
     static class Node{
         int data;
          Node left = null;
@@ -58,70 +59,35 @@ public class printKLevelsFar {
         return root;
     }
 
-
-
     public static void display(Node root){
-
-        if(root == null)
-            return;
+        if(root == null) return;
         String str = "";
         str += root.left != null ? root.left.data + " " : ". ";
         str += "<-- " + root.data + " -->";
         str += root.right != null ? " " + root.right.data :  " .";
         System.out.println(str);
-
-
         display(root.left);
         display(root.right);
-
-    }
-    public static ArrayList<Node> node2Root(Node root , int data){
-        if(root == null)
-            return new ArrayList<>();
-        
-        if(root.data == data){
-            ArrayList<Node> ans = new ArrayList<>();
-            ans.add(root);
-            return ans;
-        }
-
-        ArrayList<Node> l = node2Root(root.left, data);
-        if(l.size() > 0){
-            l.add(root);
-            return l;
-        }
-
-        ArrayList<Node> r = node2Root(root.right, data);
-        if(r.size() > 0){
-            r.add(root);
-            return r;
-        }
-
-        return new ArrayList<>();
     }
 
-    public static void printKLevelsDown(Node root , int  k , Node block){
-        if(root == null || k < 0 || root == block)
-            return;
-
-        if(k == 0)
-            System.out.println(root.data);
-        
-            printKLevelsDown(root.left , k  - 1 , block);
-            printKLevelsDown(root.right , k  - 1 , block);
-
-    }
-    public static void printKLevelsfar(Node root , int k , int data){
-        ArrayList<Node> path = node2Root(root, data);
-        for(int i = 0; i < path.size(); i++){
-            printKLevelsDown(path.get(i), k - i , i == 0 ? null : path.get(i - 1));
+    public static Node removeLeafNodes(Node root){
+        if(root == null){
+            return root;
         }
+
+        if(root.left == null && root.right == null){
+            return null;
+        }
+        root.left = removeLeafNodes(root.left);   //new left root
+        root.right = removeLeafNodes(root.right);   // new right root
+        return root;
     }
     public static void main(String[] args){
         Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
         Node root = constructBinaryTree(arr);
-        // display(root);
-        printKLevelsfar(root , 2 , 37);
+        display(root);
+        removeLeafNodes(root);
+        System.out.println();
+        display(root);
     }
-
 }
