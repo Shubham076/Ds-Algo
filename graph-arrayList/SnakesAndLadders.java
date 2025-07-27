@@ -2,7 +2,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Queue;
 
-class Solution {
+class SnakesAndLadders {
     static class Pair{
         int v;
         int count;
@@ -53,7 +53,7 @@ class Solution {
                 
                 if(arr.get(ni) != -1){
                     //means a snake or ladder is present
-                    ni = arr.get(ni) - 1; //why minus one beacuase to make it zero based
+                    ni = arr.get(ni) - 1; //why minus one because to make it zero based
                 }
                 q.add(new Pair(ni , rm.count + 1));
             }

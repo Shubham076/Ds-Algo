@@ -1,5 +1,5 @@
 import java.util.*;
-public class isTreeBalanced {
+public class IsTreeBalanced {
     static class Node{
         int data;
          Node left = null;

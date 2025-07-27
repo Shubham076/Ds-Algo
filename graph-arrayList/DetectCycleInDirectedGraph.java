@@ -25,7 +25,6 @@ class DetectCycleInDirectedGraph {
     }
 
     public static boolean detectCycle(int src, ArrayList<Edge>[] g, boolean[] visited, boolean[] stack){
-
     	visited[src] = true;
     	stack[src] = true;
     	for(Edge e : g[src]){
@@ -48,7 +47,7 @@ class DetectCycleInDirectedGraph {
 
 // make sure all the edges are directed in the input
     public static void main(String[] args){
-    	fastReader f = new fastReader();
+    	FastReaderGraph f = new FastReaderGraph();
     	int vtces = f.nextInt();
     	ArrayList<Edge>[] graph = new ArrayList[vtces];
     	for(int i = 0; i < vtces; i++){

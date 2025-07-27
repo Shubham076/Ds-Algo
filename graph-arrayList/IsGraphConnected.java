@@ -35,19 +35,13 @@ public class IsGraphConnected {
 
       ArrayList<ArrayList<Integer>> comps = new ArrayList<>();
       boolean[] visited = new boolean[vtces];
-      
       for(int i = 0; i < vtces; i++){
           if(!visited[i]){
               ArrayList<Integer> comp = new ArrayList<>();
                 generateComps(graph , i , visited , comp); 
                 comps.add(comp);
           }
-          
       }
-      
-       
-      // write your code here
-
       System.out.println(comps.size() == 1);
    }
    

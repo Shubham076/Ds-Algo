@@ -1,5 +1,12 @@
+/*
+https://www.geeksforgeeks.org/find-the-largest-subtree-in-a-tree-that-is-also-a-bst/
+
+Given a Binary Tree, write a function that returns the size of the largest
+subtree which is also a Binary Search Tree (BST). If the complete Binary Tree
+is BST, then return the size of whole tree.
+*/
 import java.util.*;
-public class isTreeBST {
+public class LargestBstSubtree {
     static class Node {
         int data;
         Node left = null;
@@ -30,7 +37,6 @@ public class isTreeBST {
 
         while (s.size() > 0) {
             Pair p  = s.peek();
-
             if (p.state == 1) {
                 idx++;
                 if (arr[idx] != null) {
@@ -52,12 +58,10 @@ public class isTreeBST {
                 s.pop();
             }
         }
-
         return root;
     }
 
     public static void display(Node root) {
-
         if (root == null)
             return;
         String str = "";
@@ -65,60 +69,55 @@ public class isTreeBST {
         str += "<-- " + root.data + " -->";
         str += root.right != null ? " " + root.right.data :  " .";
         System.out.println(str);
-
-
         display(root.left);
         display(root.right);
-
     }
+
     static class bstPair {
         boolean isBST;
         int max;
         int min;
+        Node node;  //node of the largest bst
+        int size;   //size of the largest bst
     }
 
+    //O(N)
     public static bstPair isBSt(Node root) {
         if (root == null) {
-
-            // base pair
             bstPair bp = new bstPair();
             bp.isBST = true;
             bp.max = Integer.MIN_VALUE;
             bp.min = Integer.MAX_VALUE;
+            bp.node = null;
+            bp.size = 0;
             return bp;
         }
 
         bstPair l = isBSt(root.left);
         bstPair r = isBSt(root.right);
         bstPair mp = new bstPair();
-        mp.isBST = l.isBST && r.isBST && root.data > l.max && root.data < r.min;
+        mp.isBST = l.isBST && r.isBST && root.data >= l.max && root.data <= r.min;
 
         mp.min = Math.min(root.data , Math.min(l.min , r.min));
         mp.max = Math.max(root.data , Math.max(l.max , r.max));
+
+        if (mp.isBST) {
+            mp.node = root;
+            mp.size = l.size + r.size + 1;
+        } else if (l.size > r.size) {//comparing the size of largest bst in left and right subtree
+            mp.node = l.node;
+            mp.size = l.size;
+        } else {
+            mp.node = r.node;
+            mp.size = r.size;
+        }
         return mp;
-    }
-
-    //second method
-    public static boolean isbst2(Node root, Integer min, Integer max) {
-        if (root == null) {
-            return true;
-        }
-
-        if (min != null && root.data < min) {
-            return false;
-        }
-
-        if (max != null && root.data > max) {
-            return false;
-        }
-
-        return isbst2(root.left, min, root.data) && isbst2(root.right, root.data, max);
     }
     public static void main(String[] args) {
         Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
         Node root = constructBinaryTree(arr);
         // display(root);
-        bstPair p  = isBSt(root);
-        System.out.println(p.isBST);
+        bstPair p = isBSt(root);
+        System.out.println(p.node.data + "@" + p.size);
     }
 }

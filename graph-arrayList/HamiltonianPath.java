@@ -1,4 +1,4 @@
-//hamiltonian path path in which we visites each vertex atleast once
+//hamiltonian path is a path in which we visit's each vertex atleast once
 //hamiltonian cycle path in which we reach the same node where we started after visiting each vertex once
 import java.io.*;
 import java.util.*;
@@ -38,15 +38,13 @@ public class HamiltonianPath {
         int src = Integer.parseInt(br.readLine());
 
         // write all your codes here
-        HashSet<Integer> visisted = new HashSet<>();
-        printAllPath(graph, src, visisted, "" + src, src);
+        HashSet<Integer> visited = new HashSet<>();
+        printAllPath(graph, src, visited, "" + src, src);
     }
 
     public static void printAllPath(ArrayList<Edge>[] graph, int src, HashSet<Integer> visited, String psf, int os) {
-
         if (visited.size() == graph.length - 1) {
             System.out.print(psf);
-
             boolean cycle = false;
             for (Edge e : graph[src]) {
                 if (e.nbr == os) {
@@ -70,5 +68,4 @@ public class HamiltonianPath {
         }
         visited.remove(src);
     }
-
 }

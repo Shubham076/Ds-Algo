@@ -1,10 +1,10 @@
 //leetcode 232  push 0(1) pop o(1) amortized
 import java.util.*;
-class MyQueue {
+class QueueUsingStack3 {
     Stack<Integer> s;
     Stack<Integer> hs;
     int front;
-    public MyQueue() {
+    public QueueUsingStack3() {
         s = new Stack<>();
         hs = new Stack<>();
         front = -1;

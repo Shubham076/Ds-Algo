@@ -5,8 +5,6 @@ public class nextGreaterElementOnRight {
         int[] arr = {2, 5, 9, 3, 1, 12, 6, 7, 8};
         // int[] ans = method1(arr);
         int[] ans = method2(arr);
-
-
         for (int i : ans) {
             System.out.print(i + " ");
         }
@@ -16,7 +14,6 @@ public class nextGreaterElementOnRight {
     // now iterate from righ to left and pop all the elements from the stack having value less than arr[i]
     // ans for arr[i] = top of the stack;
     public static int[] method1(int[] arr) {
-
         Stack<Integer> s = new Stack<>();
         int[] ans = new int[arr.length];
         ans[arr.length - 1] = -1;
@@ -45,10 +42,8 @@ public class nextGreaterElementOnRight {
     public static int[] method2(int[] arr) {
         Stack<Integer> s = new Stack<>();
         int[] ans = new int[arr.length];
-
         s.push(0);
         for (int i = 1; i < arr.length; i++) {
-
             while (s.size() > 0 && arr[i] > arr[s.peek()]) {
                 int pos = s.peek();
                 ans[pos] = arr[i];

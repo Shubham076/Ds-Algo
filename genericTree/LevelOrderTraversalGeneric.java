@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class LevelOrderTraversal {
+public class LevelOrderTraversalGeneric {
     static class Node {
         int data;
         ArrayList<Node> children = new ArrayList<>();

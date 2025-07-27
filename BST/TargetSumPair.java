@@ -35,11 +35,8 @@ class TargetSumPair{
 	        str += "<-- " + root.data + " -->";
 	        str += root.right != null ? " " + root.right.data :  " .";
 	        System.out.println(str);
-
-
 	        display(root.left);
 	        display(root.right);
-
     	}
 
     	public static boolean find(Node root , int val){

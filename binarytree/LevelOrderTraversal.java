@@ -1,5 +1,5 @@
 import java.util.*;
-public class invertBinaryTree {
+class LevelOrderTraversal{
     static class Node{
         int data;
          Node left = null;
@@ -64,8 +64,8 @@ public class invertBinaryTree {
             return;
         String str = "";
         str += root.left != null ? root.left.data + " " : ". ";
-        str += "<-- " + root.data + " -->";
-        str += root.right != null ? " " + root.right.data :  " .";
+        str += "<-- "+root.data+" -->";
+        str += root.right != null ? " "+root.right.data: " .";
         System.out.println(str);
 
 
@@ -74,26 +74,36 @@ public class invertBinaryTree {
 
     }
 
-    //convert binay tree to its mirror tree
-    public static Node invert(Node root){
-        if(root == null){
-            return null;
+    public static void levelOrder(Node root){
+        ArrayDeque<Node> q = new ArrayDeque<>();
+        q.addLast(root);
+
+        while(q.size() > 0){
+            int count = q.size();
+
+            for(int i = 0; i < count; i++){
+                Node p = q.removeFirst();
+                System.out.print(p.data + " ");
+
+                if(p.left != null){
+                    q.add(p.left);
+                }
+
+                if(p.right != null){
+                    q.add(p.right);
+                }
+            }
+
+            System.out.println();
         }
-
-        Node left = invert(root.left);
-        Node right = invert(root.right);
-        root.left = right;
-        root.right = left;
-
-        return root;
     }
+
+
     public static void main(String[] args){
         Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
         Node root = constructBinaryTree(arr);
-        display(root);
-        System.out.println();
-        invert(root);
-        display(root);;
+        // display(root);
+        levelOrder(root);
     }
 
 }

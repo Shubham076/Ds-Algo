@@ -4,7 +4,7 @@
  as possible
 */
  import java.util.*; 
-class isBinaryTreeCompleteBinaryTree{
+class IsBinaryTreeCompleteBinaryTree {
 	class TreeNode {
 		int val;
 		TreeNode left;

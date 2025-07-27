@@ -2,7 +2,7 @@
 full binary tree is the tree in which all the nodes have 2 children except the leaf nodes
 https://practice.geeksforgeeks.org/problems/full-binary-tree/1
 */
-class isBinaryTreeFullBinaryTree {
+class IsBinaryTreeFullBinaryTree {
 	class TreeNode {
 		int val;
 		TreeNode left;

@@ -16,15 +16,12 @@ public class rotateArray {
 			int temp = arr[start];
 			arr[start] = arr[end];
 			arr[end] = temp;
-
 			start++;
 			end--;
-
 		}
 	}
 
 	public static void rotate(int[] a, int k) {
-
 		k = k % a.length;
 		if (k < 0)
 			k = k  + a.length;
@@ -37,7 +34,6 @@ public class rotateArray {
 
 		// reverse entire array
 		reverse(a , 0 , a.length - 1);
-
 	}
 
 	public static void main(String[] args) throws Exception {
@@ -47,13 +43,10 @@ public class rotateArray {
 		for (int i = 0; i < n; i++) {
 			a[i] = scn.nextInt();
 		}
-
 		int k = scn.nextInt();
 		scn.close();
-
 		rotate(a, k);
 		display(a);
 	}
-
 }
 

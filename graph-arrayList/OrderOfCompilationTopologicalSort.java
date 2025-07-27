@@ -46,7 +46,6 @@ public class OrderOfCompilationTopologicalSort {
 }
    
    public static void topologicalSort(ArrayList<Edge>[] graph , int src , boolean[] visited , Stack<Integer> s){
-       
        visited[src]  = true;
        for(Edge e : graph[src]){
            if(!visited[e.nbr]){

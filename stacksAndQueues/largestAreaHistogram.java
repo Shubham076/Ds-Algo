@@ -23,12 +23,10 @@ class largestAreaHistogram{
         
         //next smaller element on the right
         for(int i = 1; i < heights.length; i++){
-            
             while(st.size() > 0 && heights[i] < heights[st.peek()]){
                 int idx = st.pop();
                 sr[idx] = i;
             }
-            
             st.push(i);
         }
         

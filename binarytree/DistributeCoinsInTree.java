@@ -6,7 +6,7 @@
 
 // positive indicates excess coins, -ve means need coins 0 means neither needed
 // nor supplied coins
-class distributecoinsInTree {
+class DistributeCoinsInTree {
 	public class TreeNode {
 		int val;
 		TreeNode left;
@@ -28,7 +28,7 @@ class distributecoinsInTree {
 
 	int ans = 0;
 
-	public int distributecoins(TreeNode root) {
+	public int distributeCoins(TreeNode root) {
 		solve(root);
 		return ans;
 	}

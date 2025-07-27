@@ -22,7 +22,6 @@ class stockSpan{
 		span[0] = 1;
 
 		for(int i = 1; i < arr.length; i++){
-
 			while(s.size() > 0 && arr[i] >= arr[s.peek()]){
 				s.pop();
 			}
@@ -33,7 +32,6 @@ class stockSpan{
 			else{
 				span[i] = i - s.peek();
 			}
-
 			s.push(i);
 		}
 

@@ -1,6 +1,6 @@
 import java.util.HashMap;
 import java.util.Stack;
-public class balancedBackets {
+public class BalancedBrackets {
     public static void main(String[] args){
         String s = "[[]]({}";
         HashMap<Character ,Character> m = new HashMap<>();

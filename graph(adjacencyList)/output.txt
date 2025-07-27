@@ -1,7 +1,0 @@
-A @ A
-B @ AB
-D @ AD
-C @ ABC
-E @ ADE
-F @ ADEF
-G @ ADEG

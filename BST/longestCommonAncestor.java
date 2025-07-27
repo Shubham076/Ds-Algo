@@ -21,11 +21,9 @@ class longestCommonAncestor{
 	 		Node rc = construct(arr , mid + 1 , hi);
 	 		Node n = new Node(data , lc, rc);
 	 		return n;
-
 	 	}
 
 	 	public static void display(Node root){
-
 	        if(root == null)
 	            return;
 	        String str = "";
@@ -33,11 +31,8 @@ class longestCommonAncestor{
 	        str += "<-- " + root.data + " -->";
 	        str += root.right != null ? " " + root.right.data :  " .";
 	        System.out.println(str);
-
-
 	        display(root.left);
 	        display(root.right);
-
     	}
 
     	public static int lca(Node root , int d1 , int d2){

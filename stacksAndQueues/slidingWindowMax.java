@@ -53,7 +53,6 @@ class slidingWindowMax {
             while (ng[j] < i + k) {
                 j = ng[j];
             }
-
             System.out.print(arr[j] + " ");
         }
     }

@@ -67,11 +67,8 @@ public class printKLevelsDown {
         str += "<-- " + root.data + " -->";
         str += root.right != null ? " " + root.right.data :  " .";
         System.out.println(str);
-
-
         display(root.left);
         display(root.right);
-
     }
 
     public static void printKLevels(Node root , int  k){
@@ -83,7 +80,6 @@ public class printKLevelsDown {
         
         printKLevels(root.left , k  - 1);
         printKLevels(root.right , k  - 1);
-
     }
     public static void main(String[] args){
         Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};

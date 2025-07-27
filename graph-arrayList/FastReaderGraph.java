@@ -1,12 +1,11 @@
-import java.io.IOException;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
-class FastReader{
+import java.util.*;
+import java.io.*;
+
+class FastReaderGraph {
         BufferedReader br;
         StringTokenizer st;
 
-        public FastReader(){
+        public FastReaderGraph(){
             br = new BufferedReader(new InputStreamReader(System.in));
         } 
 
@@ -57,4 +56,5 @@ class FastReader{
         String next(){
             return Next();
         }
-    }
+}
+

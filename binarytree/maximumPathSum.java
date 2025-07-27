@@ -75,14 +75,11 @@ class maximumPathSum{
     }
 
     static int max = Integer.MIN_VALUE;
-    public static int maxpathSum(Node node){
+    public static int maxPathSum(Node node){
     	if(node == null) return 0;
-
-    	int lmax = Math.max(0, maxpathSum(node.left));
-    	int rmax = Math.max(0, maxpathSum(node.right));
-
+    	int lmax = Math.max(0, maxPathSum(node.left));
+    	int rmax = Math.max(0, maxPathSum(node.right));
     	max = Math.max(max , lmax + node.data + rmax);
-
     	// returning max path upto that node
     	return Math.max(lmax, rmax) + node.data;
     }
@@ -92,7 +89,7 @@ class maximumPathSum{
     	// The optimal path is 15 -> 20 -> 7 with a path sum of 15 + 20 + 7 = 42.
     	Node root = constructBinaryTree(arr);
     	display(root);
-    	maxpathSum(root);
+    	maxPathSum(root);
     	System.out.println(max);
     }
 }

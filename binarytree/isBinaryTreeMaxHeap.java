@@ -32,7 +32,7 @@ class isBinaryTreeMaxHeap {
 		if(root.right == null){  //means second last level
 			return root.data >= root.left.data;
 		}
-		//cheking the property with both child
+		//checking the property with both child
 		if(root.data >= root.left.data && root.data >= root.right.data){
 			return checkHeap(root.left) && checkHeap(root.right);
 		}

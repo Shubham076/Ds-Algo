@@ -1,5 +1,5 @@
 //a binary tree is symmetric if  both left and right subtree are mirror images of each other
-class isTreeSymmetric{
+class IsTreeSymmetric {
     public class TreeNode {
 		int val;
 		TreeNode left;

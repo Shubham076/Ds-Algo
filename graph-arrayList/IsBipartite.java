@@ -1,9 +1,9 @@
 /*
-A Bipartite Graph is a graph whose vertices can be divided into two independent sets, U and V such that every edge (u, v) either connects a vertex from U to V or a vertex from V to U
+A Bipartite Graph is a graph whose vertices can be divided into two independent sets,
+U and V such that every edge (u, v) either connects a vertex from U to V or a vertex from V to U
 if cycle is not present means graph is bi-partite
-else if even length cycle is present means graoh is bipartite
+else if even length cycle is present means graph is bipartite
 odd length cycle => graph is not bipartite
-
 we can find using bfs
 */
 
@@ -72,7 +72,6 @@ public class IsBipartite {
     }
 
     public static boolean checkBipartite(ArrayList<Edge>[] graph, int[] visited, int src) {
-
         ArrayDeque<Pair> q = new ArrayDeque<>();
         q.addLast(new Pair(src, src + "", 0));
 

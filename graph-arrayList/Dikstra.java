@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 // find the shortest path in terms of weights
-public class Djkistra {
+public class Dikstra {
    static class Edge {
       int src;
       int nbr;

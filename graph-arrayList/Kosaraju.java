@@ -5,7 +5,7 @@ when we apply dfs it is seen thar for all edges u -> v u appears in the top of v
 
 import java.util.*;
 //finding the strongly connected components of a graph
-class KosarajuAlgo {
+class Kosaraju {
 	static class Edge {
         int src;
         int nbr;
@@ -73,7 +73,7 @@ class KosarajuAlgo {
     }
 
     public static void main(String[] args){
-    	fastReader f = new fastReader();
+    	FastReaderGraph f = new FastReaderGraph();
     	int vtces = f.nextInt();
 
 		@SuppressWarnings("unchecked")
@@ -91,7 +91,6 @@ class KosarajuAlgo {
     		int des = f.nextInt();
     		graph[src].add(new Edge(src, des));
     		rgraph[des].add(new Edge(des, src));
-
     	}
     	solve(graph, rgraph, vtces);
     }
